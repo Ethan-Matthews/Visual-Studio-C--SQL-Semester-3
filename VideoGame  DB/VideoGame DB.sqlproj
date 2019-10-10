@@ -73,4 +73,7 @@
   <ItemGroup>
     <Reference Include="System.Data" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.AddSeedData.sql" />
+  </ItemGroup>
 </Project>
