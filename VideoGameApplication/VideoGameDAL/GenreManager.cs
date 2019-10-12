@@ -43,5 +43,36 @@ namespace VideoGameDAL
             }
             return genres;
         }
+
+        public static Genre GetGenre(int genreID)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+
+                    // Sql Command.
+                    cmd.CommandText = "Select * from Genre where GenreID = " + genreID + ";";
+
+                    // The reader executes commend text.
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        Genre genre = new Genre();
+                        genre.GenreID = reader.GetInt32(0);
+                        genre.GenreName = reader.GetString(1);
+                        return genre;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+        }
     }
 }

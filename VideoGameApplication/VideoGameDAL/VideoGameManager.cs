@@ -10,7 +10,7 @@ namespace VideoGameDAL
 {
     public static class VideoGameManager
     {
-        public static List<VideoGame> GetGenreList()
+        public static List<VideoGame> GetVideoGameList()
         {
             // Create list to hold videoGame objects.
             List<VideoGame> videoGames = new List<VideoGame>();
@@ -47,6 +47,42 @@ namespace VideoGameDAL
                 }
             }
             return videoGames;
+        }
+
+        public static VideoGame GetVideoGame(int videoGameID)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+
+                    // Sql Command.
+                    cmd.CommandText = "Select * from VideoGame where GameID = " + videoGameID + ";";
+
+                    // The reader executes commend text.
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        VideoGame videoGame = new VideoGame();
+                        videoGame.GameID = reader.GetInt32(0);
+                        videoGame.Title = reader.GetString(1);
+                        videoGame.ReleaseDate = reader.GetString(2);
+                        videoGame.TotalHoursPlayed = reader.GetInt32(3);
+                        videoGame.NumberOfAchievemnets = reader.GetInt32(4);
+                        videoGame.DeveloperID = reader.GetInt32(5);
+                        videoGame.GenreID = reader.GetInt32(6);
+                        return videoGame;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
         }
     }
 }
