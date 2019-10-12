@@ -11,8 +11,8 @@
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>VideoGame__DB</RootNamespace>
-    <AssemblyName>VideoGame__DB</AssemblyName>
+    <RootNamespace>VideoGameDB</RootNamespace>
+    <AssemblyName>VideoGameDB</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -63,9 +63,6 @@
     <Build Include="DeveloperCountry.sql" />
     <Build Include="Developer.sql" />
     <Build Include="Genre.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="VideoGame  DB.refactorlog" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Data" />
