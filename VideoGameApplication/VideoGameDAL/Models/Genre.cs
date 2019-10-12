@@ -8,8 +8,10 @@ namespace VideoGameDAL.Models
 {
     public class Genre
     {
-        // Scalar properties.
+        // Primary Key.
         public int GenreID { get; set; }
+
+        // Column.
         public string GenreName { get; set; }
 
     }

@@ -7,6 +7,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "VideoGameDB", "VideoGameDB\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameDAL", "VideoGameDAL\VideoGameDAL.csproj", "{CE765C7F-90EC-4BAA-BB44-5FDE3CC18214}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHarness", "TestHarness\TestHarness.csproj", "{D1154D1D-9D71-4820-8B7A-9CF2FC6B0533}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{CE765C7F-90EC-4BAA-BB44-5FDE3CC18214}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE765C7F-90EC-4BAA-BB44-5FDE3CC18214}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE765C7F-90EC-4BAA-BB44-5FDE3CC18214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1154D1D-9D71-4820-8B7A-9CF2FC6B0533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1154D1D-9D71-4820-8B7A-9CF2FC6B0533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1154D1D-9D71-4820-8B7A-9CF2FC6B0533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1154D1D-9D71-4820-8B7A-9CF2FC6B0533}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
