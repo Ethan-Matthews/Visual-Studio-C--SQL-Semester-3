@@ -68,9 +68,6 @@
     <RefactorLog Include="VideoGame  DB.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassFile1.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
