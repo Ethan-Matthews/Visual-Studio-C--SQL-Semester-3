@@ -34,11 +34,11 @@ namespace TestHarness
 
             #region "INSERT NEW GENRE TEST"
 
-            Genre genreInsert = new Genre();
-            genreInsert.GenreName = "The Newest Genre";
+            //Genre genreInsert = new Genre();
+            //genreInsert.GenreName = "The Newest Genre";
 
-            Genre newGenre = GenreManager.InsertGenre(genreInsert);
-            Console.WriteLine(string.Format("The new Genre Name is {0} at ID {1}", newGenre.GenreName, newGenre.GenreID));
+            //Genre newGenre = GenreManager.InsertGenre(genreInsert);
+            //Console.WriteLine(string.Format("The new Genre Name is {0} at ID {1}", newGenre.GenreName, newGenre.GenreID));
 
             #endregion
 
@@ -113,7 +113,7 @@ namespace TestHarness
 
             #region "GET ONE DEVELOPERCOUNTRY BY COUNTRYCODE TEST"
 
-            //Console.Write("Enter a category id: ");
+            //Console.Write("Enter a developer country code: ");
             //string countryCode = Console.ReadLine();
 
             //DeveloperCountry developerCountryOne = DeveloperCountryManager.GetDeveloperCountry(countryCode);
@@ -172,7 +172,7 @@ namespace TestHarness
 
             #region "GET ONE DEVELOPER BY ID TEST"
 
-            //Console.Write("Enter a category ID: ");
+            //Console.Write("Enter a developer ID: ");
             //string developerID = Console.ReadLine();
 
             //Developer developerOne = DeveloperManager.GetDeveloper(int.Parse(developerID));
@@ -183,6 +183,83 @@ namespace TestHarness
             //else
             //{
             //    Console.WriteLine("Developer ID not found");
+            //}
+
+            #endregion
+
+            #endregion
+
+            #region "VIDEOGAME TESTS"
+
+            #region "UPDATE VIDEOGAME TEST"
+
+            //VideoGame videoGame = new VideoGame();
+            //videoGame.DeveloperID = 50;
+            //videoGame.Title = "New Videogame title";
+
+            //int rowsAffected = VideoGameManager.UpdateVideoGame(videoGame);
+            //Console.WriteLine("Update complete: {0} row(s) affected", rowsAffected);
+
+            #endregion
+
+            #region "DELETE VIDEOGAME TEST"
+
+            //int rows = VideoGameManager.DeleteVideoGame(50);
+            //Console.WriteLine(rows);
+
+            #endregion
+
+            #region "INSERT NEW VIDEOGAME TEST"
+
+            //VideoGame videoGameInsert = new VideoGame();
+            //videoGameInsert.Title = "New title";
+            //videoGameInsert.ReleaseDate = "New Date";
+            //videoGameInsert.NumberOfAchievemnets = 64;
+            //videoGameInsert.TotalHoursPlayed = 30;
+            //videoGameInsert.DeveloperID = 2;
+            //videoGameInsert.GenreID = 38;
+
+            //VideoGame newVideoGame = VideoGameManager.InsertVideoGame(videoGameInsert);
+            //Console.WriteLine(string.Format("The new game ID is {0}\n" +
+            //                                "The Title is: {1}\n" +
+            //                                "The ReleaseDate is: {2}\n" +
+            //                                "The number of Achievements is: {3}\n" +
+            //                                "The total hours played is: {4}\n" +
+            //                                "The developer ID is: {5}\n" +
+            //                                "The genre ID is: {6}\n",
+            //                                newVideoGame.GameID,
+            //                                newVideoGame.Title,
+            //                                newVideoGame.ReleaseDate, 
+            //                                newVideoGame.NumberOfAchievemnets, 
+            //                                newVideoGame.TotalHoursPlayed,
+            //                                newVideoGame.DeveloperID, 
+            //                                newVideoGame.GenreID));
+
+            #endregion
+
+            #region "GET ALL VIDEOGAME TEST"
+
+            //List<VideoGame> videoGames = VideoGameManager.GetVideoGameList();
+            //foreach (VideoGame gameInList in videoGames)
+            //{
+            //    Console.WriteLine(gameInList.Title);
+            //}
+
+            #endregion
+
+            #region "GET ONE VIDEOGAME BY ID TEST"
+
+            //Console.Write("Enter a videoGame ID: ");
+            //string gameID = Console.ReadLine();
+
+            //VideoGame gameOne = VideoGameManager.GetVideoGame(int.Parse(gameID));
+            //if (gameOne != null)
+            //{
+            //    Console.WriteLine(gameOne.Title);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Game ID not found");
             //}
 
             #endregion

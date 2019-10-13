@@ -87,6 +87,7 @@ namespace VideoGameDAL
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.CommandText = "InsertDeveloper";
                     cmd.Parameters.AddWithValue("@developerName", developer.DeveloperName);
+                    cmd.Parameters.AddWithValue("@countryCode", developer.CountryCode);
 
                     developer.DeveloperID = cmd.ExecuteNonQuery();
 
