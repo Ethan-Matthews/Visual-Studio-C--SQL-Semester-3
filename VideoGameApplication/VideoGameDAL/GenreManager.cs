@@ -22,9 +22,8 @@ namespace VideoGameDAL
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = connection;
-
-                    // Sql Command.
-                    cmd.CommandText = "Select * from Genre";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "GetAllGenres";
 
                     // The reader executes commend text.
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -52,9 +51,9 @@ namespace VideoGameDAL
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = connection;
-
-                    // Sql Command.
-                    cmd.CommandText = "Select * from Genre where GenreID = " + genreID + ";";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "GetGenre";
+                    cmd.Parameters.AddWithValue("@genreID", genreID);
 
                     // The reader executes commend text.
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -71,6 +70,64 @@ namespace VideoGameDAL
                     {
                         return null;
                     }
+                }
+            }
+        }
+
+        public static Genre InsertGenre(Genre genre)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "InsertGenre";
+                    cmd.Parameters.AddWithValue("@genreName", genre.GenreName);
+
+                    genre.GenreID = cmd.ExecuteNonQuery();
+
+                    return genre;
+                }
+            }
+        }
+
+        public static int UpdateGenre(Genre genre)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "UpdateGenre";
+                    cmd.Parameters.AddWithValue("@genreID", genre.GenreID);
+                    cmd.Parameters.AddWithValue("@genreName", genre.GenreName);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected;
+                }
+            }
+        }
+
+        public static int DeleteGenre(int genreID)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "DeleteGenre";
+                    cmd.Parameters.AddWithValue("genreID", genreID);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected;
                 }
             }
         }

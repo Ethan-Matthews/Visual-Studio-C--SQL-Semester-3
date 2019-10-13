@@ -57,12 +57,22 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="StoredProcedures" />
+    <Folder Include="StoredProcedures\VideoGame" />
+    <Folder Include="StoredProcedures\Genre" />
+    <Folder Include="StoredProcedures\Developer" />
+    <Folder Include="StoredProcedures\DeveloperCountry" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="VideoGame.sql" />
     <Build Include="DeveloperCountry.sql" />
     <Build Include="Developer.sql" />
     <Build Include="Genre.sql" />
+    <Build Include="StoredProcedures\Genre\InsertGenre.sql" />
+    <Build Include="StoredProcedures\Genre\DeleteGenre.sql" />
+    <Build Include="StoredProcedures\Genre\GetGenre.sql" />
+    <Build Include="StoredProcedures\Genre\UpdateGenre.sql" />
+    <Build Include="StoredProcedures\Genre\GetAllGenres.sql" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Data" />

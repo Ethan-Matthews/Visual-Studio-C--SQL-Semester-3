@@ -12,6 +12,33 @@ namespace TestHarness
     {
         static void Main(string[] args)
         {
+            Genre genreGet = GenreManager.GetGenre(1);
+            Console.WriteLine(genreGet.GenreName);
+
+            Genre g = new Genre();
+            g.GenreName = "NewGenre";
+            GenreManager.InsertGenre(g);
+
+            List<Genre> genres = GenreManager.GetGenreList();
+            foreach (Genre genre in genres)
+            {
+                Console.WriteLine(genre.GenreName);
+            }
+
+            GenreManager.UpdateGenre(g);
+
+            Console.Read();
+
+            GenreManager.DeleteGenre(g.GenreID);
+
+            List<Genre> genres2 = GenreManager.GetGenreList();
+            foreach (Genre genre in genres2)
+            {
+                Console.WriteLine(genre.GenreName);
+            }
+
+            Console.Read();
+
             //List<Genre> genres = GenreManager.GetGenreList();
             //foreach (Genre genre in genres)
             //{
@@ -40,39 +67,38 @@ namespace TestHarness
             //}
             //Console.Read();
 
-            Developer developer = DeveloperManager.GetDeveloper(1);
+            //Developer developer = DeveloperManager.GetDeveloper(1);
 
-            if (developer != null)
-            {
-                Console.WriteLine(developer.DeveloperID);
-            }
-            else
-            {
-                Console.WriteLine("Video ID not found");
-            }
+            //if (developer != null)
+            //{
+            //    Console.WriteLine(developer.DeveloperID);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Video ID not found");
+            //}
 
+            //DeveloperCountry DeveloperCountry = DeveloperCountryManager.GetDeveloperCountry("CAN");
 
-            DeveloperCountry DeveloperCountry = DeveloperCountryManager.GetDeveloperCountry("CAN");
+            //if (developer != null)
+            //{
+            //    Console.WriteLine(DeveloperCountry.CountryName);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Video ID not found");
+            //}
 
-            if (developer != null)
-            {
-                Console.WriteLine(DeveloperCountry.CountryName);
-            }
-            else
-            {
-                Console.WriteLine("Video ID not found");
-            }
+            //Genre genre = GenreManager.GetGenre(3);
 
-            Genre genre = GenreManager.GetGenre(3);
-
-            if (genre != null)
-            {
-                Console.WriteLine(genre.GenreName);
-            }
-            else
-            {
-                Console.WriteLine("Video ID not found");
-            }
+            //if (genre != null)
+            //{
+            //    Console.WriteLine(genre.GenreName);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Video ID not found");
+            //}
 
             //Console.WriteLine("Enter a videoGame ID: ");
             //string videoGameID = Console.ReadLine();
