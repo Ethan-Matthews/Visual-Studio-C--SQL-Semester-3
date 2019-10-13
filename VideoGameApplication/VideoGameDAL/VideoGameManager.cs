@@ -22,9 +22,9 @@ namespace VideoGameDAL
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = connection;
-
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     // Sql Command.
-                    cmd.CommandText = "Select * from VideoGame";
+                    cmd.CommandText = "GetAllVideoGames";
 
                     // The reader executes commend text.
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -59,7 +59,7 @@ namespace VideoGameDAL
                     cmd.Connection = connection;
 
                     // Sql Command.
-                    cmd.CommandText = "Select * from VideoGame where GameID = " + videoGameID + ";";
+                    cmd.CommandText = "GetVideoGame";
 
                     // The reader executes commend text.
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -81,6 +81,70 @@ namespace VideoGameDAL
                     {
                         return null;
                     }
+                }
+            }
+        }
+
+        public static VideoGame InsertVideoGame(VideoGame videoGame)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "InsertVideoGame";
+                    cmd.Parameters.AddWithValue("@title", videoGame.Title);
+                    cmd.Parameters.AddWithValue("@releaseDate", videoGame.ReleaseDate);
+                    cmd.Parameters.AddWithValue("@totalHoursPlayed", videoGame.TotalHoursPlayed);
+                    cmd.Parameters.AddWithValue("@numberOfAchievements", videoGame.NumberOfAchievemnets);
+                    // Foreign Keys
+                    cmd.Parameters.AddWithValue("@developerID", videoGame.DeveloperID);
+                    cmd.Parameters.AddWithValue("@genreID", videoGame.GenreID);
+
+                    videoGame.GameID = cmd.ExecuteNonQuery();
+
+                    return videoGame;
+                }
+            }
+        }
+
+        public static int UpdateVideoGame(VideoGame videoGame)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "UpdateVideoGame";
+                    cmd.Parameters.AddWithValue("@gameID", videoGame.GenreID);
+                    cmd.Parameters.AddWithValue("@title", videoGame.Title);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected;
+                }
+            }
+        }
+
+        public static int DeleteVideoGame(int gameID)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "DeleteVideoGame";
+                    cmd.Parameters.AddWithValue("gameID", gameID);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected;
                 }
             }
         }

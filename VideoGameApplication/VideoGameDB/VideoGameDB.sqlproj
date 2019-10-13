@@ -83,6 +83,11 @@
     <Build Include="StoredProcedures\Developer\InsertDeveloper.sql" />
     <Build Include="StoredProcedures\Developer\UpdateDeveloper.sql" />
     <Build Include="StoredProcedures\Developer\DeleteDeveloper.sql" />
+    <Build Include="StoredProcedures\VideoGame\GetVideoGame.sql" />
+    <Build Include="StoredProcedures\VideoGame\InsertVideoGame.sql" />
+    <Build Include="StoredProcedures\VideoGame\UpdateVideoGame.sql" />
+    <Build Include="StoredProcedures\VideoGame\DeleteVideoGame.sql" />
+    <Build Include="StoredProcedures\VideoGame\GetAllVideoGames.sql" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Data" />
