@@ -34,11 +34,11 @@ namespace TestHarness
 
             #region "INSERT NEW GENRE TEST"
 
-            //Genre genreInsert = new Genre();
-            //genreInsert.GenreName = "New Genre";
+            Genre genreInsert = new Genre();
+            genreInsert.GenreName = "The Newest Genre";
 
-            //Genre newGenre = GenreManager.InsertGenre(genreInsert);
-            //Console.WriteLine(string.Format("The new Genre Id is {0}", newGenre.GenreName));
+            Genre newGenre = GenreManager.InsertGenre(genreInsert);
+            Console.WriteLine(string.Format("The new Genre Name is {0} at ID {1}", newGenre.GenreName, newGenre.GenreID));
 
             #endregion
 
@@ -54,18 +54,18 @@ namespace TestHarness
 
             #region "GET ONE GENRE BY ID TEST"
 
-            Console.Write("enter a genre id: ");
-            string genreID = Console.ReadLine();
+            //Console.Write("enter a genre id: ");
+            //string genreID = Console.ReadLine();
 
-            Genre genreOne = GenreManager.GetGenre(int.Parse(genreID));
-            if (genreOne != null)
-            {
-                Console.WriteLine(genreOne.GenreName);
-            }
-            else
-            {
-                Console.WriteLine("Genre id not found");
-            }
+            //Genre genreOne = GenreManager.GetGenre(int.Parse(genreID));
+            //if (genreOne != null)
+            //{
+            //    Console.WriteLine(genreOne.GenreName);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Genre id not found");
+            //}
 
             #endregion
 

@@ -22,9 +22,8 @@ namespace VideoGameDAL
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = connection;
-
-                    // Sql Command.
-                    cmd.CommandText = "Select * from DeveloperCountry";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "GetAllDeveloperCountries";
 
                     // The reader executes commend text.
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -52,9 +51,10 @@ namespace VideoGameDAL
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = connection;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "GetDeveloperCountry";
+                    cmd.Parameters.AddWithValue("@DeveloperCountryCode", developerCountryCode);
 
-                    // Sql Command.
-                    cmd.CommandText = "Select * from DeveloperCountry where CountryCode = '" + developerCountryCode + "';";
 
                     // The reader executes commend text.
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -71,6 +71,65 @@ namespace VideoGameDAL
                     {
                         return null;
                     }
+                }
+            }
+        }
+
+        public static DeveloperCountry InsertDeveloperCountry(DeveloperCountry developerCountry)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "InsertDeveloperCountry";
+                    cmd.Parameters.AddWithValue("@developerCountryName", developerCountry.CountryName);
+                    cmd.Parameters.AddWithValue("@developerCountryCode", developerCountry.CountryCode);
+
+                    developerCountry.CountryCode = cmd.ExecuteNonQuery().ToString();
+
+                    return developerCountry;
+                }
+            }
+        }
+
+        public static int UpdateDeveloperCountry(DeveloperCountry developerCountry)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "UpdateDeveloperCountry";
+                    cmd.Parameters.AddWithValue("@developerCountryCode", developerCountry.CountryCode);
+                    cmd.Parameters.AddWithValue("@developerCountryName", developerCountry.CountryName);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected;
+                }
+            }
+        }
+
+        public static int DeleteDeveloperCountry(string developerCountryCode)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "DeleteDeveloperCountry";
+                    cmd.Parameters.AddWithValue("@developerCountryCode", developerCountryCode);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected;
                 }
             }
         }

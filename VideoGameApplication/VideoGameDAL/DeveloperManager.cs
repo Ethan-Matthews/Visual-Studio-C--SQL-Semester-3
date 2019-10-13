@@ -22,9 +22,8 @@ namespace VideoGameDAL
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = connection;
-
-                    // Sql Command.
-                    cmd.CommandText = "Select * from Developer";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "GetAllDevelopers";
 
                     // The reader executes commend text.
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -53,9 +52,9 @@ namespace VideoGameDAL
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = connection;
-
-                    // Sql Command.
-                    cmd.CommandText = "Select * from Developer where DeveloperID = " + developerID + ";";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "GetDeveloper";
+                    cmd.Parameters.AddWithValue("@DeveloperID", developerID);
 
                     // The reader executes commend text.
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -73,6 +72,64 @@ namespace VideoGameDAL
                     {
                         return null;
                     }
+                }
+            }
+        }
+
+        public static Developer InsertDeveloper(Developer developer)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "InsertDeveloper";
+                    cmd.Parameters.AddWithValue("@developerName", developer.DeveloperName);
+
+                    developer.DeveloperID = cmd.ExecuteNonQuery();
+
+                    return developer;
+                }
+            }
+        }
+
+        public static int UpdateDeveloper(Developer developer)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "UpdateDeveloper";
+                    cmd.Parameters.AddWithValue("@developerID", developer.DeveloperID);
+                    cmd.Parameters.AddWithValue("@developerName", developer.DeveloperName);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected;
+                }
+            }
+        }
+
+        public static int DeleteDeveloper(string developerID)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = "DeleteDeveloper";
+                    cmd.Parameters.AddWithValue("@developerID", developerID);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected;
                 }
             }
         }

@@ -73,6 +73,16 @@
     <Build Include="StoredProcedures\Genre\GetGenre.sql" />
     <Build Include="StoredProcedures\Genre\UpdateGenre.sql" />
     <Build Include="StoredProcedures\Genre\GetAllGenres.sql" />
+    <Build Include="StoredProcedures\DeveloperCountry\InsertDeveloperCountry.sql" />
+    <Build Include="StoredProcedures\DeveloperCountry\UpdateDeveloperCountry.sql" />
+    <Build Include="StoredProcedures\DeveloperCountry\DeleteDeveloperCountry.sql" />
+    <Build Include="StoredProcedures\DeveloperCountry\GetAllDeveloperCountries.sql" />
+    <Build Include="StoredProcedures\DeveloperCountry\GetDeveloperCountry.sql" />
+    <Build Include="StoredProcedures\Developer\GetAllDevelopers.sql" />
+    <Build Include="StoredProcedures\Developer\GetDeveloper.sql" />
+    <Build Include="StoredProcedures\Developer\InsertDeveloper.sql" />
+    <Build Include="StoredProcedures\Developer\UpdateDeveloper.sql" />
+    <Build Include="StoredProcedures\Developer\DeleteDeveloper.sql" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Data" />
