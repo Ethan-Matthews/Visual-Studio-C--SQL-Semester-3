@@ -12,119 +12,185 @@ namespace TestHarness
     {
         static void Main(string[] args)
         {
-            Genre genreGet = GenreManager.GetGenre(1);
-            Console.WriteLine(genreGet.GenreName);
+            #region "GENRE TESTS"
 
-            Genre g = new Genre();
-            g.GenreName = "NewGenre";
-            GenreManager.InsertGenre(g);
+            #region "UPDATE GENRE TEST"
 
-            List<Genre> genres = GenreManager.GetGenreList();
-            foreach (Genre genre in genres)
-            {
-                Console.WriteLine(genre.GenreName);
-            }
+            //Genre genre = new Genre();
+            //genre.GenreID = 35;
+            //genre.GenreName = "New Genre Name";
 
-            GenreManager.UpdateGenre(g);
+            //int rowsAffected = GenreManager.UpdateGenre(genre);
+            //Console.WriteLine("Update complete: {0} row(s) affected", rowsAffected);
 
-            Console.Read();
+            #endregion
 
-            GenreManager.DeleteGenre(g.GenreID);
+            #region "DELETE GENRE TEST"
 
-            List<Genre> genres2 = GenreManager.GetGenreList();
-            foreach (Genre genre in genres2)
-            {
-                Console.WriteLine(genre.GenreName);
-            }
+            //int rows = GenreManager.DeleteGenre(35);
+            //Console.WriteLine(rows);
 
-            Console.Read();
+            #endregion
+
+            #region "INSERT NEW GENRE TEST"
+
+            //Genre genreInsert = new Genre();
+            //genreInsert.GenreName = "New Genre";
+
+            //Genre newGenre = GenreManager.InsertGenre(genreInsert);
+            //Console.WriteLine(string.Format("The new Genre Id is {0}", newGenre.GenreName));
+
+            #endregion
+
+            #region "GET ALL GENRES TEST"
 
             //List<Genre> genres = GenreManager.GetGenreList();
-            //foreach (Genre genre in genres)
+            //foreach (Genre genreInList in genres)
             //{
-            //    Console.WriteLine(genre.GenreName);
+            //    Console.WriteLine(genreInList.GenreName);
             //}
-            //Console.WriteLine("-----------------------------\n");
+
+            #endregion
+
+            #region "GET ONE GENRE BY ID TEST"
+
+            Console.Write("enter a genre id: ");
+            string genreID = Console.ReadLine();
+
+            Genre genreOne = GenreManager.GetGenre(int.Parse(genreID));
+            if (genreOne != null)
+            {
+                Console.WriteLine(genreOne.GenreName);
+            }
+            else
+            {
+                Console.WriteLine("Genre id not found");
+            }
+
+            #endregion
+
+            #endregion
+
+            #region "DEVELOPER COUNTRY TESTS"
+
+            #region "UPDATE DEVELOPERCOUNTRY TEST"
+
+            //DeveloperCountry developerCountry = new DeveloperCountry();
+            //developerCountry.CountryCode = "NEW";
+            //developerCountry.CountryName = "New Country Name";
+
+            //int rowsAffected = DeveloperCountryManager.UpdateDeveloperCountry(developerCountry);
+            //Console.WriteLine("Update complete: {0} row(s) affected", rowsAffected);
+
+            #endregion
+
+            #region "DELETE DEVELOPERCOUNTRY TEST"
+
+            //int rows = DeveloperCountryManager.DeleteDeveloperCountry(2);
+            //Console.WriteLine(rows);
+
+            #endregion
+
+            #region "INSERT NEW DEVELOPERCOUNTRY TEST"
+
+            //DeveloperCountry developerCountryInsert = new DeveloperCountry();
+            //developerCountryInsert.CountryName = "New Country";
+
+            //DeveloperCountry newDeveloperCountry = DeveloperCountryManager.InsertDeveloperCountry(developerCountryInsert);
+            //Console.WriteLine(string.Format("The new developerCountry code is {0}", newDeveloperCountry.CountryCode));
+
+            #endregion
+
+            #region "GET ALL DEVELOPERCOUNTRIES TEST"
 
             //List<DeveloperCountry> developerCountries = DeveloperCountryManager.GetDeveloperCountryList();
-            //foreach (DeveloperCountry developerCountry in developerCountries)
+            //foreach (DeveloperCountry countryInList in developerCountries)
             //{
-            //    Console.WriteLine(developerCountry.CountryName);
+            //    Console.WriteLine(countryInList.CountryName);
             //}
-            //Console.WriteLine("-----------------------------\n");
+
+            #endregion
+
+            #region "GET ONE DEVELOPERCOUNTRY BY COUNTRYCODE TEST"
+
+            //Console.Write("Enter a category id: ");
+            //string countryCode = Console.ReadLine();
+
+            //DeveloperCountry developerCountryOne = DeveloperCountryManager.GetDeveloperCountry(countryCode);
+            //if (developerCountryOne != null)
+            //{
+            //    Console.WriteLine(developerCountryOne.CountryName);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Country Code not found");
+            //}
+
+            #endregion
+
+            #endregion
+
+            #region "DEVELOPER TESTS"
+
+            #region "UPDATE DEVELOPER TEST"
+
+            //Developer developer = new Developer();
+            //developer.DeveloperID = 50;
+            //developer.DeveloperName = "New Developer Name";
+
+            //int rowsAffected = DeveloperManager.UpdateDeveloper(developer);
+            //Console.WriteLine("Update complete: {0} row(s) affected", rowsAffected);
+
+            #endregion
+
+            #region "DELETE DEVELOPER TEST"
+
+            //int rows = DeveloperManager.DeleteDeveloper(50);
+            //Console.WriteLine(rows);
+
+            #endregion
+
+            #region "INSERT NEW DEVELOPER TEST"
+
+            //Developer developerInsert = new Developer();
+            //developerInsert.DeveloperName = "New Developer";
+
+            //Developer newDeveloper = DeveloperCountryManager.InsertDeveloper(developerInsert);
+            //Console.WriteLine(string.Format("The new developer ID is {0}", newDeveloper.DeveloperID));
+
+            #endregion
+
+            #region "GET ALL DEVELOPERS TEST"
 
             //List<Developer> developers = DeveloperManager.GetDeveloperList();
-            //foreach (Developer developer in developers)
+            //foreach (Developer developerInList in developers)
             //{
-            //    Console.WriteLine(developer.DeveloperName);
+            //    Console.WriteLine(developerInList.DeveloperName);
             //}
-            //Console.WriteLine("-----------------------------\n");
 
-            //List<VideoGame> videoGames = VideoGameManager.GetVideoGameList();
-            //foreach (VideoGame videoGame in videoGames)
+            #endregion
+
+            #region "GET ONE DEVELOPER BY ID TEST"
+
+            //Console.Write("Enter a category ID: ");
+            //string developerID = Console.ReadLine();
+
+            //Developer developerOne = DeveloperManager.GetDeveloper(int.Parse(developerID));
+            //if (developerOne != null)
             //{
-            //    Console.WriteLine(videoGame.Title);
-            //}
-            //Console.Read();
-
-            //Developer developer = DeveloperManager.GetDeveloper(1);
-
-            //if (developer != null)
-            //{
-            //    Console.WriteLine(developer.DeveloperID);
+            //    Console.WriteLine(developerOne.DeveloperName);
             //}
             //else
             //{
-            //    Console.WriteLine("Video ID not found");
+            //    Console.WriteLine("Developer ID not found");
             //}
 
-            //DeveloperCountry DeveloperCountry = DeveloperCountryManager.GetDeveloperCountry("CAN");
+            #endregion
 
-            //if (developer != null)
-            //{
-            //    Console.WriteLine(DeveloperCountry.CountryName);
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Video ID not found");
-            //}
+            #endregion
 
-            //Genre genre = GenreManager.GetGenre(3);
-
-            //if (genre != null)
-            //{
-            //    Console.WriteLine(genre.GenreName);
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Video ID not found");
-            //}
-
-            //Console.WriteLine("Enter a videoGame ID: ");
-            //string videoGameID = Console.ReadLine();
-            //VideoGame videoGame = VideoGameManager.GetVideoGame(int.Parse(videoGameID));
-
-            //if (videoGame != null)
-            //{
-            //    Console.WriteLine(videoGameID);
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Video ID not found");
-            //}
-
-            //Console.WriteLine("Enter a category ID: ");
-            //string genreID = Console.ReadLine();
-            //Genre genre = GenreManager.GetGenre(int.Parse(genreID));
-
-            //if (genre != null) 
-            //{
-            //    Console.WriteLine(genre.GenreName);
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Genre ID not found");
-            //}
+            Console.WriteLine("");
+            Console.Read();
         }
     }
 }
