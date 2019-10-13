@@ -85,8 +85,17 @@ namespace VideoGameDAL
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.CommandText = "InsertGenre";
                     cmd.Parameters.AddWithValue("@genreName", genre.GenreName);
+                    //Output Parameter.
+                    SqlParameter outParam = new SqlParameter();
+                    outParam.SqlDbType = System.Data.SqlDbType.Int;
+                    outParam.ParameterName = "@newIdentity";
+                    outParam.Direction = System.Data.ParameterDirection.Output;
+                    cmd.Parameters.Add(outParam);
 
-                    genre.GenreID = cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
+
+                    //set the id
+                    genre.GenreID = (int)cmd.Parameters["@newIdentity"].Value;
 
                     return genre;
                 }
@@ -125,9 +134,16 @@ namespace VideoGameDAL
                     cmd.CommandText = "DeleteGenre";
                     cmd.Parameters.AddWithValue("genreID", genreID);
 
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    return rowsAffected;
+                    try
+                    {
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected;
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.WriteLine("Cannot delete this record this is associated with other record.\n\n" + ex.Message + "\n");
+                        return 0;
+                    }
                 }
             }
         }

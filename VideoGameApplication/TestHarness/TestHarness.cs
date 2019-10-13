@@ -12,6 +12,7 @@ namespace TestHarness
     {
         static void Main(string[] args)
         {
+            // Tests Completed.
             #region "GENRE TESTS"
 
             #region "UPDATE GENRE TEST"
@@ -27,7 +28,7 @@ namespace TestHarness
 
             #region "DELETE GENRE TEST"
 
-            //int rows = GenreManager.DeleteGenre(35);
+            //int rows = GenreManager.DeleteGenre(8);
             //Console.WriteLine(rows);
 
             #endregion
@@ -39,16 +40,6 @@ namespace TestHarness
 
             //Genre newGenre = GenreManager.InsertGenre(genreInsert);
             //Console.WriteLine(string.Format("The new Genre Name is {0} at ID {1}", newGenre.GenreName, newGenre.GenreID));
-
-            #endregion
-
-            #region "GET ALL GENRES TEST"
-
-            //List<Genre> genres = GenreManager.GetGenreList();
-            //foreach (Genre genreInList in genres)
-            //{
-            //    Console.WriteLine(genreInList.GenreName);
-            //}
 
             #endregion
 
@@ -69,15 +60,27 @@ namespace TestHarness
 
             #endregion
 
+            #region "GET ALL GENRES TEST"
+
+            //List<Genre> genres = GenreManager.GetGenreList();
+            //foreach (Genre genreInList in genres)
+            //{
+            //    Console.WriteLine(genreInList.GenreName + " : " + genreInList.GenreID);
+            //}
+
             #endregion
 
+            #endregion
+
+            // Tests Completed.
             #region "DEVELOPER COUNTRY TESTS"
 
             #region "UPDATE DEVELOPERCOUNTRY TEST"
 
             //DeveloperCountry developerCountry = new DeveloperCountry();
-            //developerCountry.CountryCode = "NEW";
-            //developerCountry.CountryName = "New Country Name";
+            //developerCountry.CountryCode = "USA";
+            //developerCountry.CountryName = "Updated Country Name";
+
 
             //int rowsAffected = DeveloperCountryManager.UpdateDeveloperCountry(developerCountry);
             //Console.WriteLine("Update complete: {0} row(s) affected", rowsAffected);
@@ -86,28 +89,22 @@ namespace TestHarness
 
             #region "DELETE DEVELOPERCOUNTRY TEST"
 
-            //int rows = DeveloperCountryManager.DeleteDeveloperCountry(2);
-            //Console.WriteLine(rows);
+            //int rows = DeveloperCountryManager.DeleteDeveloperCountry("CAN");
+            //Console.WriteLine("Lines affected: " + rows + "\n");
 
             #endregion
 
             #region "INSERT NEW DEVELOPERCOUNTRY TEST"
 
             //DeveloperCountry developerCountryInsert = new DeveloperCountry();
+            //developerCountryInsert.CountryCode = "NCC";
             //developerCountryInsert.CountryName = "New Country";
 
             //DeveloperCountry newDeveloperCountry = DeveloperCountryManager.InsertDeveloperCountry(developerCountryInsert);
-            //Console.WriteLine(string.Format("The new developerCountry code is {0}", newDeveloperCountry.CountryCode));
-
-            #endregion
-
-            #region "GET ALL DEVELOPERCOUNTRIES TEST"
-
-            //List<DeveloperCountry> developerCountries = DeveloperCountryManager.GetDeveloperCountryList();
-            //foreach (DeveloperCountry countryInList in developerCountries)
-            //{
-            //    Console.WriteLine(countryInList.CountryName);
-            //}
+            //Console.WriteLine(string.Format("The new developerCountry code is: {0}\n" +
+            //                                "The new country name is: {1}\n",
+            //                                newDeveloperCountry.CountryCode,
+            //                                newDeveloperCountry.CountryName));
 
             #endregion
 
@@ -119,11 +116,21 @@ namespace TestHarness
             //DeveloperCountry developerCountryOne = DeveloperCountryManager.GetDeveloperCountry(countryCode);
             //if (developerCountryOne != null)
             //{
-            //    Console.WriteLine(developerCountryOne.CountryName);
+            //    Console.WriteLine("\n" + developerCountryOne.CountryName + "\n");
             //}
             //else
             //{
             //    Console.WriteLine("Country Code not found");
+            //}
+
+            #endregion
+
+            #region "GET ALL DEVELOPERCOUNTRIES TEST"
+
+            //List<DeveloperCountry> developerCountries = DeveloperCountryManager.GetDeveloperCountryList();
+            //foreach (DeveloperCountry countryInList in developerCountries)
+            //{
+            //    Console.WriteLine(countryInList.CountryCode + " : " + countryInList.CountryName);
             //}
 
             #endregion
@@ -135,8 +142,9 @@ namespace TestHarness
             #region "UPDATE DEVELOPER TEST"
 
             //Developer developer = new Developer();
-            //developer.DeveloperID = 50;
+            //developer.DeveloperID = 2;
             //developer.DeveloperName = "New Developer Name";
+            //developer.CountryCode = "CAN";
 
             //int rowsAffected = DeveloperManager.UpdateDeveloper(developer);
             //Console.WriteLine("Update complete: {0} row(s) affected", rowsAffected);
@@ -145,28 +153,24 @@ namespace TestHarness
 
             #region "DELETE DEVELOPER TEST"
 
-            //int rows = DeveloperManager.DeleteDeveloper(50);
+            //int rows = DeveloperManager.DeleteDeveloper(2);
             //Console.WriteLine(rows);
 
             #endregion
 
             #region "INSERT NEW DEVELOPER TEST"
 
-            //Developer developerInsert = new Developer();
-            //developerInsert.DeveloperName = "New Developer";
+            Developer developerInsert = new Developer();
+            developerInsert.DeveloperName = "New Developer";
+            developerInsert.CountryCode = "CAN";
 
-            //Developer newDeveloper = DeveloperCountryManager.InsertDeveloper(developerInsert);
-            //Console.WriteLine(string.Format("The new developer ID is {0}", newDeveloper.DeveloperID));
-
-            #endregion
-
-            #region "GET ALL DEVELOPERS TEST"
-
-            //List<Developer> developers = DeveloperManager.GetDeveloperList();
-            //foreach (Developer developerInList in developers)
-            //{
-            //    Console.WriteLine(developerInList.DeveloperName);
-            //}
+            Developer newDeveloper = DeveloperManager.InsertDeveloper(developerInsert);
+            Console.WriteLine(string.Format("The new developer ID is {0}\n" +
+                                            "The new developer name is: {1}" +
+                                            "The new Developer CountryCode is: {2}\n",
+                                            newDeveloper.DeveloperID,
+                                            newDeveloper.DeveloperName,
+                                            newDeveloper.CountryCode));
 
             #endregion
 
@@ -184,6 +188,18 @@ namespace TestHarness
             //{
             //    Console.WriteLine("Developer ID not found");
             //}
+
+            #endregion
+
+            #region "GET ALL DEVELOPERS TEST"
+
+            List<Developer> developers = DeveloperManager.GetDeveloperList();
+            foreach (Developer developerInList in developers)
+            {
+                Console.WriteLine(developerInList.DeveloperName + " : " +
+                                  developerInList.DeveloperID + " : " +
+                                  developerInList.CountryCode);
+            }
 
             #endregion
 

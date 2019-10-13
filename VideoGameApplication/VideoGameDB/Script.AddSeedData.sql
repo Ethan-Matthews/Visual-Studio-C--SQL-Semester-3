@@ -10,8 +10,9 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
-
 --Popuate Genre.
+
+DBCC CHECKIDENT (Genre, RESEED, 0)
 
 If not exists (select 1 from Genre)
 Begin
@@ -42,6 +43,8 @@ Begin
 end
 
 --Populate Developer.
+
+DBCC CHECKIDENT (Developer, RESEED, 0)
 
 If not exists (select 1 from Developer)
 Begin

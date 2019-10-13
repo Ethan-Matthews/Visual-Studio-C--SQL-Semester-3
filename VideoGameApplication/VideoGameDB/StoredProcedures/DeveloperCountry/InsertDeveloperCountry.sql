@@ -1,6 +1,7 @@
 ﻿create procedure [dbo].[InsertDeveloperCountry]
-	@developerCountryName nvarchar(50),
-	@developerCountryCode nvarchar(3) = null output
+	@developerCountryCode nvarchar(3),
+	@developerCountryName nvarchar(50)
 as
-	insert into DeveloperCountry([CountryName], [CountryCode]) values (@developerCountryName, @developerCountryCode);
-return @developerCountryCode;
+	insert into DeveloperCountry([CountryCode],         [CountryName])
+						 values (@developerCountryCode, @developerCountryName);
+return 0;

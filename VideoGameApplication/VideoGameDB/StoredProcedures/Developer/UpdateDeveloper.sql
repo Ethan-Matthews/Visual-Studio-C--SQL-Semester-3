@@ -1,6 +1,9 @@
 ﻿create procedure [dbo].[UpdateDeveloper]
 	@developerID int,
-	@developerName nvarchar(50)
+	@developerName nvarchar(50),
+	@countryCode nvarchar(3)
 as
-	update Developer set DeveloperName=@developerName where DeveloperID=@developerID;
+	update Developer 
+	set DeveloperName = @developerName, countryCode = @countryCode
+	where DeveloperID = @developerID;
 return @@rowcount

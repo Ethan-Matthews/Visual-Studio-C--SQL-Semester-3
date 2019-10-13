@@ -89,7 +89,17 @@ namespace VideoGameDAL
                     cmd.Parameters.AddWithValue("@developerName", developer.DeveloperName);
                     cmd.Parameters.AddWithValue("@countryCode", developer.CountryCode);
 
-                    developer.DeveloperID = cmd.ExecuteNonQuery();
+                    //Output Parameter.
+                    SqlParameter outParam = new SqlParameter();
+                    outParam.SqlDbType = System.Data.SqlDbType.Int;
+                    outParam.ParameterName = "@newIdentity";
+                    outParam.Direction = System.Data.ParameterDirection.Output;
+                    cmd.Parameters.Add(outParam);
+
+                    cmd.ExecuteNonQuery();
+
+                    //set the id
+                    developer.DeveloperID = (int)cmd.Parameters["@newIdentity"].Value;
 
                     return developer;
                 }
@@ -108,6 +118,7 @@ namespace VideoGameDAL
                     cmd.CommandText = "UpdateDeveloper";
                     cmd.Parameters.AddWithValue("@developerID", developer.DeveloperID);
                     cmd.Parameters.AddWithValue("@developerName", developer.DeveloperName);
+                    cmd.Parameters.AddWithValue("@countryCode", developer.CountryCode);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -116,7 +127,7 @@ namespace VideoGameDAL
             }
         }
 
-        public static int DeleteDeveloper(string developerID)
+        public static int DeleteDeveloper(int developerID)
         {
             using (SqlConnection connection = DataBase.GetConnection())
             {
@@ -128,9 +139,16 @@ namespace VideoGameDAL
                     cmd.CommandText = "DeleteDeveloper";
                     cmd.Parameters.AddWithValue("@developerID", developerID);
 
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    return rowsAffected;
+                    try
+                    {
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected;
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.WriteLine("Cannot delete this record this is associated with other record.\n\n" + ex.Message + "\n");
+                        return 0;
+                    }
                 }
             }
         }

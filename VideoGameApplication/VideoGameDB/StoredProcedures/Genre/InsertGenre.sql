@@ -4,4 +4,4 @@
 as
 	insert into Genre ([GenreName]) values (@genreName);
 	set @newIdentity = scope_identity();
-return @newIdentity;
+return 0;

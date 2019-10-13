@@ -85,10 +85,10 @@ namespace VideoGameDAL
                     cmd.Connection = connection;
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.CommandText = "InsertDeveloperCountry";
-                    cmd.Parameters.AddWithValue("@developerCountryName", developerCountry.CountryName);
                     cmd.Parameters.AddWithValue("@developerCountryCode", developerCountry.CountryCode);
+                    cmd.Parameters.AddWithValue("@developerCountryName", developerCountry.CountryName);
 
-                    developerCountry.CountryCode = cmd.ExecuteNonQuery().ToString();
+                    cmd.ExecuteNonQuery();
 
                     return developerCountry;
                 }
@@ -125,11 +125,18 @@ namespace VideoGameDAL
                     cmd.Connection = connection;
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.CommandText = "DeleteDeveloperCountry";
-                    cmd.Parameters.AddWithValue("@developerCountryCode", developerCountryCode);
+                    cmd.Parameters.AddWithValue("@countryCode", developerCountryCode);
 
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    return rowsAffected;
+                    try
+                    {
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected;
+                    }
+                        catch (SqlException ex)
+                    {
+                        Console.WriteLine("Cannot delete this record this is associated with other record.\n\n" + ex.Message + "\n");
+                        return 0;
+                    }
                 }
             }
         }
