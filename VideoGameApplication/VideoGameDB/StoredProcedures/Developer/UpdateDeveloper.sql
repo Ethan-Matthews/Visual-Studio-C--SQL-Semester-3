@@ -4,6 +4,7 @@
 	@countryCode nvarchar(3)
 as
 	update Developer 
-		set DeveloperName = @developerName, countryCode = @countryCode
+		set DeveloperName = @developerName,
+			CountryCode = @countryCode
 		where DeveloperID = @developerID;
 return @@rowcount

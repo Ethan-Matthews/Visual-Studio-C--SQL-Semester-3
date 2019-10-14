@@ -163,7 +163,7 @@ namespace VideoGameDAL
                     }
                     catch (SqlException ex)
                     {
-                        Console.WriteLine("Cannot delete this record this is associated with other record.\n\n" + ex.Message + "\n");
+                        Console.WriteLine("Cannot delete this record it is associated with other record.\n\n" + ex.Message + "\n");
                         return 0;
                     }
                 }

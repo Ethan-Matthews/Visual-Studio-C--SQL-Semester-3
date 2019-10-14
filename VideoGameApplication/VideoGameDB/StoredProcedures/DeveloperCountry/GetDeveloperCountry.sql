@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[GetDeveloperCountry]
+﻿create procedure [dbo].[GetDeveloperCountry]
 	@DeveloperCountryCode nvarchar(3)
 as
 	select * from DeveloperCountry where CountryCode = @DeveloperCountryCode;

@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[GetAllDeveloperCountries]
-AS
-	SELECT * from DeveloperCountry;
-RETURN 0
+﻿create procedure [dbo].[GetAllDeveloperCountries]
+as
+	select * from DeveloperCountry;
+return 0

@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[UpdateVideoGame]
+﻿create procedure [dbo].[UpdateVideoGame]
 	@gameID int,
 	@title nvarchar(50),
 	@releaseDate Date,

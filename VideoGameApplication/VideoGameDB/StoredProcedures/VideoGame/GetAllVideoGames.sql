@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[GetAllVideoGames]
-AS
-	SELECT * from VideoGame;
-RETURN 0
+﻿create procedure [dbo].[GetAllVideoGames]
+as
+	select * from VideoGame;
+return 0

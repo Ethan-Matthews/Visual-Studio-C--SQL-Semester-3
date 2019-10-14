@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[InsertVideoGame]
+﻿create procedure [dbo].[InsertVideoGame]
 	@newIdentity int = null output,
 	@title nvarchar(50),
 	@releaseDate Date,

@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[GetAllGenres]
-AS
-	SELECT * from Genre;
-RETURN 0
+﻿create procedure [dbo].[GetAllGenres]
+as
+	select * from Genre;
+return 0

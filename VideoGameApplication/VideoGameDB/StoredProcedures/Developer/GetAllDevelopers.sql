@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[GetAllDevelopers]
-AS
-	SELECT * from Developer;
-RETURN 0
+﻿create procedure [dbo].[GetAllDevelopers]
+as
+	select * from Developer;
+return 0

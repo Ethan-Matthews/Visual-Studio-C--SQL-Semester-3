@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[DeleteVideoGame]
+﻿create procedure [dbo].[DeleteVideoGame]
 	@gameID int
 as
 	delete from VideoGame where GameID = @gameID; 

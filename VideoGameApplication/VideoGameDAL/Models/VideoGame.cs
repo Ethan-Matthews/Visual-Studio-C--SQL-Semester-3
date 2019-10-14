@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VideoGameDAL.Models
+﻿namespace VideoGameDAL.Models
 {
     public class VideoGame
     {
@@ -13,7 +7,7 @@ namespace VideoGameDAL.Models
 
         // Columns.
         public string Title { get; set; }
-        public DateTime ReleaseDate { get; set; }
+        public System.DateTime ReleaseDate { get; set; }
         public int TotalHoursPlayed { get; set; }
         public int NumberOfAchievemnets { get; set; }
 

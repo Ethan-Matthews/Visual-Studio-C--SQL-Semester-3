@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VideoGameDAL.Models;
 
 namespace VideoGameDAL
@@ -146,7 +143,7 @@ namespace VideoGameDAL
                     }
                     catch (SqlException ex)
                     {
-                        Console.WriteLine("Cannot delete this record this is associated with other record.\n\n" + ex.Message + "\n");
+                        Console.WriteLine("Cannot delete this record it is associated with other record.\n\n" + ex.Message + "\n");
                         return 0;
                     }
                 }
