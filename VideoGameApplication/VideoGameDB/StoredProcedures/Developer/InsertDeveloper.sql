@@ -1,7 +1,7 @@
 ﻿create procedure [dbo].[InsertDeveloper]
-	@newIdentity int = null output,
 	@developerName nvarchar(50),
-	@countryCode nvarchar(3)
+	@countryCode nvarchar(3),
+	@newIdentity int = null output
 as
 	insert into Developer ([DeveloperName], [CountryCode])
 				   values (@developerName, (select CountryCode

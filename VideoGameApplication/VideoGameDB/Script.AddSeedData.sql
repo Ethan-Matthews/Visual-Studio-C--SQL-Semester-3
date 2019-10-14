@@ -12,7 +12,7 @@ Post-Deployment Script Template
 
 --Popuate Genre.
 
-DBCC CHECKIDENT (Genre, RESEED, 0)
+DBCC CHECKIDENT (Genre, RESEED, 1)
 
 If not exists (select 1 from Genre)
 Begin
@@ -44,19 +44,69 @@ end
 
 --Populate Developer.
 
-DBCC CHECKIDENT (Developer, RESEED, 0)
+DBCC CHECKIDENT (Developer, RESEED, 1)
 
 If not exists (select 1 from Developer)
 Begin
-	Insert into Developer ([DeveloperName], [CountryCode]) values ('Little Green Men', 'HRV'); -- X4 sim - StarPoint Warlords.
-	Insert into Developer ([DeveloperName], [CountryCode]) values ('Projekt CD', 'POL'); -- ARPG - Witcher3.
-	Insert into Developer ([DeveloperName], [CountryCode]) values ('Ubisoft Blue Byte', 'DEU'); -- City builder - Anno 2205.
-	Insert into Developer ([DeveloperName], [CountryCode]) values ('Larian Studios', 'BEL'); -- Dungeon Crawler - Divinity OS2.
-	Insert into Developer ([DeveloperName], [CountryCode]) values ('Namco', 'JPN'); -- Fighting - Soul Calibur.
-	Insert into Developer ([DeveloperName], [CountryCode]) values ('ID Software', 'USA'); -- FPS - DOOM.
-	Insert into Developer ([DeveloperName], [CountryCode]) values ('Ironclad Games', 'CAN'); -- RTS - SSER.
-	Insert into Developer ([DeveloperName], [CountryCode]) values ('THQ Nordic', 'AUT'); -- RPG - SpellForce3.
-	Insert into Developer ([DeveloperName], [CountryCode]) values ('Creative Assembly', 'GBR'); -- TBS - ROME2: TW.
+	Insert into Developer ([DeveloperName], [CountryCode]) values ('Little Green Men', 'HRV');
+	Insert into Developer ([DeveloperName], [CountryCode]) values ('Projekt CD', 'POL');
+	Insert into Developer ([DeveloperName], [CountryCode]) values ('Ubisoft Blue Byte', 'DEU');
+	Insert into Developer ([DeveloperName], [CountryCode]) values ('Larian Studios', 'BEL');
+	Insert into Developer ([DeveloperName], [CountryCode]) values ('Namco', 'JPN');
+	Insert into Developer ([DeveloperName], [CountryCode]) values ('ID Software', 'USA');
+	Insert into Developer ([DeveloperName], [CountryCode]) values ('Ironclad Games', 'CAN');
+	Insert into Developer ([DeveloperName], [CountryCode]) values ('THQ Nordic', 'AUT');
+	Insert into Developer ([DeveloperName], [CountryCode]) values ('Creative Assembly', 'GBR');
 end
 
+--Populate VideoGame.
 
+DBCC CHECKIDENT (VideoGame, RESEED, 1)
+
+If not exists (select 1 from VideoGame)
+Begin
+	Insert into VideoGame ([Title], [ReleaseDate], [TotalHoursPlayed], [NumberOfAchievements], [DeveloperID], [GenreID])
+				   values ('StarPoint Warloads', 'May 23, 2017', 59, 54,
+					      (Select DeveloperID from Developer where DeveloperName = 'Little Green Men'),
+					      (Select GenreID from Genre where GenreName = '4X Simulator'));
+
+	Insert into VideoGame ([Title], [ReleaseDate], [TotalHoursPlayed], [NumberOfAchievements], [DeveloperID], [GenreID])
+				   values ('Witcher 3', 'May 19, 2015', 133, 78,
+					      (Select DeveloperID from Developer where DeveloperName = 'Projekt CD'),
+					      (Select GenreID from Genre where GenreName = 'Action Role Playing'));
+
+	Insert into VideoGame ([Title], [ReleaseDate], [TotalHoursPlayed], [NumberOfAchievements], [DeveloperID], [GenreID])
+				   values ('Anno 2205', 'November 3, 2015', 24, 198,
+					      (Select DeveloperID from Developer where DeveloperName = 'Ubisoft Blue Byte'),
+					      (Select GenreID from Genre where GenreName = 'City Builder'));
+
+	Insert into VideoGame ([Title], [ReleaseDate], [TotalHoursPlayed], [NumberOfAchievements], [DeveloperID], [GenreID])
+				   values ('Divinity OS2', 'September 14, 2017', 196, 97,
+					      (Select DeveloperID from Developer where DeveloperName = 'Larian Studios'),
+					      (Select GenreID from Genre where GenreName = 'Dungeon Crawler'));
+
+	Insert into VideoGame ([Title], [ReleaseDate], [TotalHoursPlayed], [NumberOfAchievements], [DeveloperID], [GenreID])
+				   values ('Soul Calibur VI', 'October 19, 2018', 43, 49,
+					      (Select DeveloperID from Developer where DeveloperName = 'Namco'),
+					      (Select GenreID from Genre where GenreName = 'Fighting'));
+
+	Insert into VideoGame ([Title], [ReleaseDate], [TotalHoursPlayed], [NumberOfAchievements], [DeveloperID], [GenreID])
+				   values ('DOOM', 'May 13, 2016', 23, 54,
+					      (Select DeveloperID from Developer where DeveloperName = 'ID Software'),
+					      (Select GenreID from Genre where GenreName = 'First Person Shooter'));
+
+	Insert into VideoGame ([Title], [ReleaseDate], [TotalHoursPlayed], [NumberOfAchievements], [DeveloperID], [GenreID])
+				   values ('Sins of a Solar Empire', 'February 4, 2008', 243, 68,
+					      (Select DeveloperID from Developer where DeveloperName = 'Ironclad Games'),
+					      (Select GenreID from Genre where GenreName = 'Real Time Srategy'));
+
+	Insert into VideoGame ([Title], [ReleaseDate], [TotalHoursPlayed], [NumberOfAchievements], [DeveloperID], [GenreID])
+				   values ('SpellForce3', 'December 7, 2017', 39, 39,
+					      (Select DeveloperID from Developer where DeveloperName = 'THQ Nordic'),
+					      (Select GenreID from Genre where GenreName = 'Role Playing'));
+
+	Insert into VideoGame ([Title], [ReleaseDate], [TotalHoursPlayed], [NumberOfAchievements], [DeveloperID], [GenreID])
+				   values ('Total War Rome 2', 'September 3, 2013', 198, 188,
+					      (Select DeveloperID from Developer where DeveloperName = 'Creative Assembly'),
+					      (Select GenreID from Genre where GenreName = 'Turn Based Strategy'));
+end

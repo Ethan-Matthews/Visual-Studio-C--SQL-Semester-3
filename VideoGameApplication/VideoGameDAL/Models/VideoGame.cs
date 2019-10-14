@@ -13,7 +13,7 @@ namespace VideoGameDAL.Models
 
         // Columns.
         public string Title { get; set; }
-        public string ReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
         public int TotalHoursPlayed { get; set; }
         public int NumberOfAchievemnets { get; set; }
 

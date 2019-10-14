@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VideoGameDAL.Models;
 
 namespace VideoGameDAL
@@ -37,7 +34,7 @@ namespace VideoGameDAL
                         VideoGame videoGame = new VideoGame();
                         videoGame.GameID = reader.GetInt32(0);
                         videoGame.Title = reader.GetString(1);
-                        videoGame.ReleaseDate = reader.GetString(2);
+                        videoGame.ReleaseDate = reader.GetDateTime(2);
                         videoGame.TotalHoursPlayed = reader.GetInt32(3);
                         videoGame.NumberOfAchievemnets = reader.GetInt32(4);
                         videoGame.DeveloperID = reader.GetInt32(5);
@@ -60,6 +57,8 @@ namespace VideoGameDAL
 
                     // Sql Command.
                     cmd.CommandText = "GetVideoGame";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@gameID", videoGameID);
 
                     // The reader executes commend text.
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -70,7 +69,7 @@ namespace VideoGameDAL
                         VideoGame videoGame = new VideoGame();
                         videoGame.GameID = reader.GetInt32(0);
                         videoGame.Title = reader.GetString(1);
-                        videoGame.ReleaseDate = reader.GetString(2);
+                        videoGame.ReleaseDate = reader.GetDateTime(2);
                         videoGame.TotalHoursPlayed = reader.GetInt32(3);
                         videoGame.NumberOfAchievemnets = reader.GetInt32(4);
                         videoGame.DeveloperID = reader.GetInt32(5);
@@ -103,7 +102,17 @@ namespace VideoGameDAL
                     cmd.Parameters.AddWithValue("@developerID", videoGame.DeveloperID);
                     cmd.Parameters.AddWithValue("@genreID", videoGame.GenreID);
 
-                    videoGame.GameID = cmd.ExecuteNonQuery();
+                    //Output Parameter.
+                    SqlParameter outParam = new SqlParameter();
+                    outParam.SqlDbType = System.Data.SqlDbType.Int;
+                    outParam.ParameterName = "@newIdentity";
+                    outParam.Direction = System.Data.ParameterDirection.Output;
+                    cmd.Parameters.Add(outParam);
+
+                    cmd.ExecuteNonQuery();
+
+                    //set the id
+                    videoGame.GameID = (int)cmd.Parameters["@newIdentity"].Value;
 
                     return videoGame;
                 }
@@ -120,10 +129,15 @@ namespace VideoGameDAL
                     cmd.Connection = connection;
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.CommandText = "UpdateVideoGame";
-                    cmd.Parameters.AddWithValue("@gameID", videoGame.GenreID);
+                    cmd.Parameters.AddWithValue("@gameID", videoGame.GameID);
                     cmd.Parameters.AddWithValue("@title", videoGame.Title);
+                    cmd.Parameters.AddWithValue("@releaseDate", videoGame.ReleaseDate);
+                    cmd.Parameters.AddWithValue("@totalHoursPlayed", videoGame.TotalHoursPlayed);
+                    cmd.Parameters.AddWithValue("@numberOfAchievements", videoGame.NumberOfAchievemnets);
+                    cmd.Parameters.AddWithValue("@developerID", videoGame.DeveloperID);
+                    cmd.Parameters.AddWithValue("@genreID", videoGame.GenreID);
 
-                    int rowsAffected = cmd.ExecuteNonQuery();
+                    int rowsAffected = (int)cmd.ExecuteNonQuery();
 
                     return rowsAffected;
                 }
@@ -142,9 +156,16 @@ namespace VideoGameDAL
                     cmd.CommandText = "DeleteVideoGame";
                     cmd.Parameters.AddWithValue("gameID", gameID);
 
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    return rowsAffected;
+                    try
+                    {
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected;
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.WriteLine("Cannot delete this record this is associated with other record.\n\n" + ex.Message + "\n");
+                        return 0;
+                    }
                 }
             }
         }

@@ -63,9 +63,16 @@ namespace TestHarness
             #region "GET ALL GENRES TEST"
 
             //List<Genre> genres = GenreManager.GetGenreList();
-            //foreach (Genre genreInList in genres)
+            //if (genres.Count() > 0)
             //{
-            //    Console.WriteLine(genreInList.GenreName + " : " + genreInList.GenreID);
+            //    foreach (Genre genreInList in genres)
+            //    {
+            //        Console.WriteLine(genreInList.GenreName + " : " + genreInList.GenreID);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No Genres were found.");
             //}
 
             #endregion
@@ -128,15 +135,24 @@ namespace TestHarness
             #region "GET ALL DEVELOPERCOUNTRIES TEST"
 
             //List<DeveloperCountry> developerCountries = DeveloperCountryManager.GetDeveloperCountryList();
-            //foreach (DeveloperCountry countryInList in developerCountries)
+            //if (developerCountries.Count() > 0)
             //{
-            //    Console.WriteLine(countryInList.CountryCode + " : " + countryInList.CountryName);
+            //    foreach (DeveloperCountry countryInList in developerCountries)
+            //    {
+            //        Console.WriteLine(countryInList.CountryCode + " : " + countryInList.CountryName);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No Developer Countries were found.");
             //}
 
-            #endregion
 
             #endregion
 
+            #endregion
+
+            // Tests Completed.
             #region "DEVELOPER TESTS"
 
             #region "UPDATE DEVELOPER TEST"
@@ -160,17 +176,17 @@ namespace TestHarness
 
             #region "INSERT NEW DEVELOPER TEST"
 
-            Developer developerInsert = new Developer();
-            developerInsert.DeveloperName = "New Developer";
-            developerInsert.CountryCode = "CAN";
+            //Developer developerInsert = new Developer();
+            //developerInsert.DeveloperName = "New Developer";
+            //developerInsert.CountryCode = "CAN";
 
-            Developer newDeveloper = DeveloperManager.InsertDeveloper(developerInsert);
-            Console.WriteLine(string.Format("The new developer ID is {0}\n" +
-                                            "The new developer name is: {1}" +
-                                            "The new Developer CountryCode is: {2}\n",
-                                            newDeveloper.DeveloperID,
-                                            newDeveloper.DeveloperName,
-                                            newDeveloper.CountryCode));
+            //Developer newDeveloper = DeveloperManager.InsertDeveloper(developerInsert);
+            //Console.WriteLine(string.Format("The new developer ID is {0}\n" +
+            //                                "The new developer name is: {1}" +
+            //                                "The new Developer CountryCode is: {2}\n",
+            //                                newDeveloper.DeveloperID,
+            //                                newDeveloper.DeveloperName,
+            //                                newDeveloper.CountryCode));
 
             #endregion
 
@@ -193,25 +209,38 @@ namespace TestHarness
 
             #region "GET ALL DEVELOPERS TEST"
 
-            List<Developer> developers = DeveloperManager.GetDeveloperList();
-            foreach (Developer developerInList in developers)
-            {
-                Console.WriteLine(developerInList.DeveloperName + " : " +
-                                  developerInList.DeveloperID + " : " +
-                                  developerInList.CountryCode);
-            }
+            //List<Developer> developers = DeveloperManager.GetDeveloperList();
+            //if (developers.Count() > 0)
+            //{
+            //    foreach (Developer developerInList in developers)
+            //    {
+            //        Console.WriteLine(developerInList.DeveloperName + " : " +
+            //                          developerInList.DeveloperID + " : " +
+            //                          developerInList.CountryCode);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No Developer were found.");
+            //}
 
             #endregion
 
             #endregion
 
+            // Tests Completed.
             #region "VIDEOGAME TESTS"
 
             #region "UPDATE VIDEOGAME TEST"
 
             //VideoGame videoGame = new VideoGame();
-            //videoGame.DeveloperID = 50;
+            //videoGame.GameID = 1;
             //videoGame.Title = "New Videogame title";
+            //videoGame.ReleaseDate = Convert.ToDateTime("May 29, 2019");
+            //videoGame.TotalHoursPlayed = 50;
+            //videoGame.NumberOfAchievemnets = 33;
+            //videoGame.DeveloperID = 2;
+            //videoGame.GenreID = 1;
 
             //int rowsAffected = VideoGameManager.UpdateVideoGame(videoGame);
             //Console.WriteLine("Update complete: {0} row(s) affected", rowsAffected);
@@ -220,7 +249,7 @@ namespace TestHarness
 
             #region "DELETE VIDEOGAME TEST"
 
-            //int rows = VideoGameManager.DeleteVideoGame(50);
+            //int rows = VideoGameManager.DeleteVideoGame(3);
             //Console.WriteLine(rows);
 
             #endregion
@@ -229,37 +258,27 @@ namespace TestHarness
 
             //VideoGame videoGameInsert = new VideoGame();
             //videoGameInsert.Title = "New title";
-            //videoGameInsert.ReleaseDate = "New Date";
+            //videoGameInsert.ReleaseDate = Convert.ToDateTime("September 27, 2011");
             //videoGameInsert.NumberOfAchievemnets = 64;
             //videoGameInsert.TotalHoursPlayed = 30;
             //videoGameInsert.DeveloperID = 2;
-            //videoGameInsert.GenreID = 38;
+            //videoGameInsert.GenreID = 3;
 
             //VideoGame newVideoGame = VideoGameManager.InsertVideoGame(videoGameInsert);
-            //Console.WriteLine(string.Format("The new game ID is {0}\n" +
-            //                                "The Title is: {1}\n" +
-            //                                "The ReleaseDate is: {2}\n" +
-            //                                "The number of Achievements is: {3}\n" +
-            //                                "The total hours played is: {4}\n" +
-            //                                "The developer ID is: {5}\n" +
-            //                                "The genre ID is: {6}\n",
+            //Console.WriteLine(string.Format("               Game ID: {0}\n" +
+            //                                "                 Title: {1}\n" +
+            //                                "           ReleaseDate: {2}\n" +
+            //                                "Number of Achievements: {3}\n" +
+            //                                "    Total hours played: {4}\n" +
+            //                                "          Developer ID: {5}\n" +
+            //                                "           Genre ID is: {6}\n",
             //                                newVideoGame.GameID,
             //                                newVideoGame.Title,
-            //                                newVideoGame.ReleaseDate, 
-            //                                newVideoGame.NumberOfAchievemnets, 
+            //                                newVideoGame.ReleaseDate,
+            //                                newVideoGame.NumberOfAchievemnets,
             //                                newVideoGame.TotalHoursPlayed,
-            //                                newVideoGame.DeveloperID, 
+            //                                newVideoGame.DeveloperID,
             //                                newVideoGame.GenreID));
-
-            #endregion
-
-            #region "GET ALL VIDEOGAME TEST"
-
-            //List<VideoGame> videoGames = VideoGameManager.GetVideoGameList();
-            //foreach (VideoGame gameInList in videoGames)
-            //{
-            //    Console.WriteLine(gameInList.Title);
-            //}
 
             #endregion
 
@@ -271,12 +290,54 @@ namespace TestHarness
             //VideoGame gameOne = VideoGameManager.GetVideoGame(int.Parse(gameID));
             //if (gameOne != null)
             //{
-            //    Console.WriteLine(gameOne.Title);
+            //    Console.WriteLine("----------------------------------------------\n" +
+            //                      "                 Title: {0}\n" +
+            //                      "          Release Date: {1}\n" +
+            //                      "    Total Hours Played: {2}\n" +
+            //                      "Number Of Achievemnets: {3}\n" +
+            //                      "           DeveloperID: {4}\n" +
+            //                      "               GenreID: {5}\n",
+            //                      gameOne.Title,
+            //                      gameOne.ReleaseDate,
+            //                      gameOne.TotalHoursPlayed,
+            //                      gameOne.NumberOfAchievemnets,
+            //                      gameOne.DeveloperID,
+            //                      gameOne.GenreID);
             //}
             //else
             //{
             //    Console.WriteLine("Game ID not found");
             //}
+
+            #endregion
+
+            #region "GET ALL VIDEOGAME TEST"
+
+            //List<VideoGame> videoGames = VideoGameManager.GetVideoGameList();
+            //if (videoGames.Count() > 0) 
+            //{
+            //    foreach (VideoGame gameInList in videoGames)
+            //    {
+            //        Console.WriteLine("----------------------------------------------\n" +
+            //                          "                 Title: {0}\n" +
+            //                          "          Release Date: {1}\n" +
+            //                          "    Total Hours Played: {2}\n" +
+            //                          "Number Of Achievemnets: {3}\n" +
+            //                          "           DeveloperID: {4}\n" +
+            //                          "               GenreID: {5}\n",
+            //                          gameInList.Title,
+            //                          gameInList.ReleaseDate,
+            //                          gameInList.TotalHoursPlayed,
+            //                          gameInList.NumberOfAchievemnets,
+            //                          gameInList.DeveloperID,
+            //                          gameInList.GenreID);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No VideoGames were found.");
+            //}
+
 
             #endregion
 
