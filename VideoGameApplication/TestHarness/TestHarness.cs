@@ -26,8 +26,8 @@ namespace TestHarness
             #region "UPDATE GENRE TEST"
 
             //Genre genre = new Genre();
-            //genre.GenreID = 1;
-            //genre.GenreName = "New Genre Name";
+            //genre.GenreID = 10;
+            //genre.GenreName = "Updated";
 
             //int rowsAffected = GenreManager.UpdateGenre(genre);
             //Console.WriteLine("Update complete: {0} row(s) affected", rowsAffected);
@@ -36,42 +36,42 @@ namespace TestHarness
 
             #region "DELETE GENRE TEST"
 
-            //int rows = GenreManager.DeleteGenre(1);
+            //int rows = GenreManager.DeleteGenre(10);
             //Console.WriteLine("Lines affected: " + rows + "\n");
 
             #endregion
 
             #region "GET ONE GENRE BY ID TEST"
 
-            //Console.Write("Enter a Genre ID: ");
-            //string genreID = Console.ReadLine();
+            Console.Write("Enter a Genre ID: ");
+            string genreID = Console.ReadLine();
 
-            //Genre genreOne = GenreManager.GetGenre(int.Parse(genreID));
-            //if (genreOne != null)
-            //{
-            //    Console.WriteLine("\n" + genreOne.GenreName + "\n");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("\nGenre ID not found.\n");
-            //}
+            Genre genreOne = GenreManager.GetGenre(int.Parse(genreID));
+            if (genreOne != null)
+            {
+                Console.WriteLine("\n" + genreOne.GenreName + "\n");
+            }
+            else
+            {
+                Console.WriteLine("\nGenre ID not found.\n");
+            }
 
             #endregion
 
             #region "GET ALL GENRES TEST"
 
-            //List<Genre> genres = GenreManager.GetGenreList();
-            //if (genres.Count() > 0)
-            //{
-            //    foreach (Genre genreInList in genres)
-            //    {
-            //        Console.WriteLine(genreInList.GenreName + " : " + genreInList.GenreID);
-            //    }
-            //}
-            //else
-            //{
-            //    Console.WriteLine("No Genres were found.");
-            //}
+            List<Genre> genres = GenreManager.GetGenreList();
+            if (genres.Count() > 0)
+            {
+                foreach (Genre genreInList in genres)
+                {
+                    Console.WriteLine(genreInList.GenreName + " : " + genreInList.GenreID);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No Genres were found.");
+            }
 
             #endregion
 
