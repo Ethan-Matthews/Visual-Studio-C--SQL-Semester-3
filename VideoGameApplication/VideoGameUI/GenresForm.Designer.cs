@@ -33,6 +33,8 @@
             this.GenreIDLabel = new System.Windows.Forms.Label();
             this.GenreIDTB = new System.Windows.Forms.TextBox();
             this.GenreNameTB = new System.Windows.Forms.TextBox();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GenresLB
@@ -78,12 +80,34 @@
             this.GenreNameTB.Size = new System.Drawing.Size(100, 22);
             this.GenreNameTB.TabIndex = 6;
             // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(242, 175);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.TabIndex = 7;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(242, 205);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 8;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // GenresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.GenreNameTB);
             this.Controls.Add(this.GenreIDTB);
             this.Controls.Add(this.GenreIDLabel);
@@ -104,6 +128,8 @@
         private System.Windows.Forms.Label GenreIDLabel;
         private System.Windows.Forms.TextBox GenreIDTB;
         private System.Windows.Forms.TextBox GenreNameTB;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button deleteButton;
     }
 }
 
