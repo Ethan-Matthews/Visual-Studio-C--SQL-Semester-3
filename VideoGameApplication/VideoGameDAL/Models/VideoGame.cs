@@ -1,4 +1,6 @@
-﻿namespace VideoGameDAL.Models
+﻿using System;
+
+namespace VideoGameDAL.Models
 {
     public class VideoGame
     {
@@ -7,7 +9,7 @@
 
         // Columns.
         public string Title { get; set; }
-        public System.DateTime ReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
         public int TotalHoursPlayed { get; set; }
         public int NumberOfAchievemnets { get; set; }
 
