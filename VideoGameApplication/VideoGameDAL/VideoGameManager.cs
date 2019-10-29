@@ -169,5 +169,79 @@ namespace VideoGameDAL
                 }
             }
         }
+
+        public static List<VideoGame> GetGenreGames(int genreID)
+        {
+            List<VideoGame> videoGames = new List<VideoGame>();
+
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+
+                    // Sql Command.
+                    cmd.CommandText = "GetVideoGameWithGenreID";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@genreID", genreID);
+
+                    // The reader executes commend text.
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        VideoGame videoGame = new VideoGame();
+                        videoGame.GameID = reader.GetInt32(0);
+                        videoGame.Title = reader.GetString(1);
+                        videoGame.ReleaseDate = reader.GetDateTime(2);
+                        videoGame.TotalHoursPlayed = reader.GetInt32(3);
+                        videoGame.NumberOfAchievemnets = reader.GetInt32(4);
+                        videoGame.DeveloperID = reader.GetInt32(5);
+                        videoGame.GenreID = reader.GetInt32(6);
+                        videoGames.Add(videoGame);
+                    }
+                    return videoGames;
+                }
+            }
+        }
+
+        public static List<VideoGame> GetDeveloperGames(int developerID)
+        {
+            List<VideoGame> videoGames = new List<VideoGame>();
+
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+
+                    // Sql Command.
+                    cmd.CommandText = "GetVideoGameWithDeveloperID";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@developerID", developerID);
+
+                    // The reader executes commend text.
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        VideoGame videoGame = new VideoGame();
+                        videoGame.GameID = reader.GetInt32(0);
+                        videoGame.Title = reader.GetString(1);
+                        videoGame.ReleaseDate = reader.GetDateTime(2);
+                        videoGame.TotalHoursPlayed = reader.GetInt32(3);
+                        videoGame.NumberOfAchievemnets = reader.GetInt32(4);
+                        videoGame.DeveloperID = reader.GetInt32(5);
+                        videoGame.GenreID = reader.GetInt32(6);
+                        videoGames.Add(videoGame);
+                    }
+                    return videoGames;
+                }
+            }
+        }
     }
 }

@@ -149,5 +149,38 @@ namespace VideoGameDAL
                 }
             }
         }
+
+        public static List<Developer> GetDevelopersWithCountryCode(string countryCode)
+        {
+            List<Developer> developers = new List<Developer>();
+
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                // Create a command using the connection.
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connection;
+
+                    // Sql Command.
+                    cmd.CommandText = "GetDevelopersWithCountryCode";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@CountryCode", countryCode);
+
+                    // The reader executes commend text.
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        Developer developer = new Developer();
+                        developer.DeveloperID = reader.GetInt32(0);
+                        developer.DeveloperName = reader.GetString(1);
+                        developer.CountryCode = reader.GetString(2);
+                        developers.Add(developer);
+                    }
+                    return developers;
+                }
+            }
+        }
     }
 }

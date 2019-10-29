@@ -43,35 +43,48 @@ namespace TestHarness
 
             #region "GET ONE GENRE BY ID TEST"
 
-            Console.Write("Enter a Genre ID: ");
-            string genreID = Console.ReadLine();
+            //Console.Write("Enter a Genre ID: ");
+            //string genreID = Console.ReadLine();
 
-            Genre genreOne = GenreManager.GetGenre(int.Parse(genreID));
-            if (genreOne != null)
-            {
-                Console.WriteLine("\n" + genreOne.GenreName + "\n");
-            }
-            else
-            {
-                Console.WriteLine("\nGenre ID not found.\n");
-            }
+            //Genre genreOne = GenreManager.GetGenre(int.Parse(genreID));
+            //if (genreOne != null)
+            //{
+            //    Console.WriteLine("\n" + genreOne.GenreName + "\n");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("\nGenre ID not found.\n");
+            //}
 
             #endregion
 
             #region "GET ALL GENRES TEST"
 
-            List<Genre> genres = GenreManager.GetGenreList();
-            if (genres.Count() > 0)
-            {
-                foreach (Genre genreInList in genres)
-                {
-                    Console.WriteLine(genreInList.GenreName + " : " + genreInList.GenreID);
-                }
-            }
-            else
-            {
-                Console.WriteLine("No Genres were found.");
-            }
+            //List<Genre> genres = GenreManager.GetGenreList();
+            //if (genres.Count() > 0)
+            //{
+            //    foreach (Genre genreInList in genres)
+            //    {
+            //        Console.WriteLine(genreInList.GenreName + " : " + genreInList.GenreID);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No Genres were found.");
+            //}
+
+            #endregion
+
+            // Navigation
+
+            #region "GET GAMES WITH GENRE ID"
+
+            //Genre genre = GenreManager.GetGenre(1);
+            //foreach (VideoGame game in genre.videoGame)
+            //{
+            //    Console.WriteLine("Name: " + game.Title + "    GenreId: " + game.GenreID);
+            //}
+
 
             #endregion
 
@@ -145,6 +158,18 @@ namespace TestHarness
             //    Console.WriteLine("No Developer Countries were found.");
             //}
 
+
+            #endregion
+
+            // Navigation
+
+            #region "GET DEVELOPERS WITH DEVELOPER COUNTRY CODE"
+
+            //DeveloperCountry developerCountry = DeveloperCountryManager.GetDeveloperCountry("CAN");
+            //foreach (Developer developer in developerCountry.Developer)
+            //{
+            //    Console.WriteLine("Name: " + developer.DeveloperName + "    CountryCode: " + developer.CountryCode);
+            //}
 
             #endregion
 
@@ -224,6 +249,28 @@ namespace TestHarness
             //{
             //    Console.WriteLine("No Developer were found.");
             //}
+
+            #endregion
+
+            // Navigation
+
+            #region "GET GAMES WITH DEVELOPER ID"
+
+            //Developer dev = DeveloperManager.GetDeveloper(2);
+            //foreach (VideoGame game in dev.videoGame)
+            //{
+            //    Console.WriteLine("Name: " + game.Title + "    DevID: " + game.DeveloperID);
+            //}
+
+            #endregion
+
+            #region "GET NAVIGATION PROPERTIES FROM DEVELOPER"
+
+            //Developer dev = DeveloperManager.GetDeveloper(1);
+            //Console.WriteLine(dev.DeveloperName);
+            //Console.WriteLine(dev.CountryCode);
+
+            //Console.WriteLine(dev.DeveloperCountry.CountryName);
 
             #endregion
 
@@ -343,6 +390,19 @@ namespace TestHarness
             //    Console.WriteLine("No VideoGames were found.");
             //}
 
+
+            #endregion
+
+            // Navigation
+
+            #region "GET NAVIGATION PROPERTIES FROM GAME"
+
+            //VideoGame game = VideoGameManager.GetVideoGame(1);
+            //Console.WriteLine(game.Title);
+
+            //Console.WriteLine(game.Genre.GenreName);
+
+            //Console.WriteLine(game.Deveoper.DeveloperName);
 
             #endregion
 

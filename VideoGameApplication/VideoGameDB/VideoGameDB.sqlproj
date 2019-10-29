@@ -88,6 +88,9 @@
     <Build Include="StoredProcedures\VideoGame\UpdateVideoGame.sql" />
     <Build Include="StoredProcedures\VideoGame\DeleteVideoGame.sql" />
     <Build Include="StoredProcedures\VideoGame\GetAllVideoGames.sql" />
+    <Build Include="StoredProcedures\VideoGame\GetVideoGameWithGenreID.sql" />
+    <Build Include="StoredProcedures\VideoGame\GetVideoGameWithDeveloperID.sql" />
+    <Build Include="StoredProcedures\Developer\GetDevelopersWithCountryCode.sql" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Data" />
