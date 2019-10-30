@@ -33,6 +33,9 @@
             this.GenreNameLB = new System.Windows.Forms.Label();
             this.GenreIDTB = new System.Windows.Forms.TextBox();
             this.GenreIDLB = new System.Windows.Forms.Label();
+            this.SaveBN = new System.Windows.Forms.Button();
+            this.deleteBN = new System.Windows.Forms.Button();
+            this.InsertGenreBN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GenreListBox
@@ -77,12 +80,45 @@
             this.GenreIDLB.TabIndex = 4;
             this.GenreIDLB.Text = "Genre ID:";
             // 
+            // SaveBN
+            // 
+            this.SaveBN.Location = new System.Drawing.Point(221, 142);
+            this.SaveBN.Name = "SaveBN";
+            this.SaveBN.Size = new System.Drawing.Size(103, 23);
+            this.SaveBN.TabIndex = 5;
+            this.SaveBN.Text = "Save Genre";
+            this.SaveBN.UseVisualStyleBackColor = true;
+            this.SaveBN.Click += new System.EventHandler(this.SaveBN_Click);
+            // 
+            // deleteBN
+            // 
+            this.deleteBN.Location = new System.Drawing.Point(221, 191);
+            this.deleteBN.Name = "deleteBN";
+            this.deleteBN.Size = new System.Drawing.Size(103, 23);
+            this.deleteBN.TabIndex = 6;
+            this.deleteBN.Text = "Delete Genre";
+            this.deleteBN.UseVisualStyleBackColor = true;
+            this.deleteBN.Click += new System.EventHandler(this.deleteBN_Click);
+            // 
+            // InsertGenreBN
+            // 
+            this.InsertGenreBN.Location = new System.Drawing.Point(221, 237);
+            this.InsertGenreBN.Name = "InsertGenreBN";
+            this.InsertGenreBN.Size = new System.Drawing.Size(103, 23);
+            this.InsertGenreBN.TabIndex = 7;
+            this.InsertGenreBN.Text = "Insert Genre";
+            this.InsertGenreBN.UseVisualStyleBackColor = true;
+            this.InsertGenreBN.Click += new System.EventHandler(this.InsertGenreBN_Click);
+            // 
             // GenreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.InsertGenreBN);
+            this.Controls.Add(this.deleteBN);
+            this.Controls.Add(this.SaveBN);
             this.Controls.Add(this.GenreIDLB);
             this.Controls.Add(this.GenreIDTB);
             this.Controls.Add(this.GenreNameLB);
@@ -103,5 +139,8 @@
         private System.Windows.Forms.Label GenreNameLB;
         private System.Windows.Forms.TextBox GenreIDTB;
         private System.Windows.Forms.Label GenreIDLB;
+        private System.Windows.Forms.Button SaveBN;
+        private System.Windows.Forms.Button deleteBN;
+        private System.Windows.Forms.Button InsertGenreBN;
     }
 }

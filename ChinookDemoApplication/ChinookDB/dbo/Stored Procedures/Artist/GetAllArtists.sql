@@ -1,0 +1,4 @@
+﻿CREATE PROCEDURE [dbo].[GetAllArtists]
+AS
+	SELECT * FROM Artist ORDER BY [Name];
+RETURN 0

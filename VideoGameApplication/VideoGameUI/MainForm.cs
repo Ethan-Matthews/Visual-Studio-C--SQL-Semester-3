@@ -21,7 +21,15 @@ namespace VideoGameUI
         {
             Form genreForm = new GenreForm();
             genreForm.MdiParent = this;
+            genreForm.FormBorderStyle = FormBorderStyle.None;
+            genreForm.Dock = DockStyle.Fill;
             genreForm.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Are you sure you want to quit?");
+            Application.Exit();
         }
     }
 }

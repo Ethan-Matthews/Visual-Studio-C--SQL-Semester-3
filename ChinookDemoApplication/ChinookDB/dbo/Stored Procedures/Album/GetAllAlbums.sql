@@ -1,0 +1,4 @@
+﻿CREATE PROCEDURE [dbo].[GetAllAlbums]
+AS
+	SELECT * FROM Album ORDER BY Title;
+RETURN 0
