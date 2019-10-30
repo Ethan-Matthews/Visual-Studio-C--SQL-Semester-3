@@ -43,7 +43,7 @@ namespace VideoGameUI
             }
         }
 
-        private void SaveCountryBN_Click(object sender, EventArgs e)
+        private void SaveCountryBN_Click(object sender, EventArgs e) 
         {
             CountryCodeTB.ReadOnly = true;
             bool isInList = false;
