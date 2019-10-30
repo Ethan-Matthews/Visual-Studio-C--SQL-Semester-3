@@ -37,6 +37,7 @@
             this.DeleteCountryBN = new System.Windows.Forms.Button();
             this.InsertCountryBN = new System.Windows.Forms.Button();
             this.BackBN = new System.Windows.Forms.Button();
+            this.CountryListLB = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // DeveloperCountryListBox
@@ -44,17 +45,18 @@
             this.DeveloperCountryListBox.FormattingEnabled = true;
             this.DeveloperCountryListBox.Location = new System.Drawing.Point(23, 52);
             this.DeveloperCountryListBox.Name = "DeveloperCountryListBox";
-            this.DeveloperCountryListBox.Size = new System.Drawing.Size(174, 368);
+            this.DeveloperCountryListBox.Size = new System.Drawing.Size(174, 381);
             this.DeveloperCountryListBox.TabIndex = 0;
             this.DeveloperCountryListBox.SelectedIndexChanged += new System.EventHandler(this.DeveloperCountryListBox_SelectedIndexChanged);
             // 
             // CountryCodeTB
             // 
+            this.CountryCodeTB.Enabled = false;
             this.CountryCodeTB.Location = new System.Drawing.Point(231, 79);
             this.CountryCodeTB.MaxLength = 3;
             this.CountryCodeTB.Name = "CountryCodeTB";
             this.CountryCodeTB.ReadOnly = true;
-            this.CountryCodeTB.Size = new System.Drawing.Size(200, 20);
+            this.CountryCodeTB.Size = new System.Drawing.Size(192, 20);
             this.CountryCodeTB.TabIndex = 1;
             // 
             // CountryCodeLB
@@ -70,7 +72,7 @@
             // 
             this.CountryNameTB.Location = new System.Drawing.Point(231, 139);
             this.CountryNameTB.Name = "CountryNameTB";
-            this.CountryNameTB.Size = new System.Drawing.Size(200, 20);
+            this.CountryNameTB.Size = new System.Drawing.Size(192, 20);
             this.CountryNameTB.TabIndex = 3;
             // 
             // CountryNameLB
@@ -94,7 +96,7 @@
             // 
             // DeleteCountryBN
             // 
-            this.DeleteCountryBN.Location = new System.Drawing.Point(231, 242);
+            this.DeleteCountryBN.Location = new System.Drawing.Point(231, 220);
             this.DeleteCountryBN.Name = "DeleteCountryBN";
             this.DeleteCountryBN.Size = new System.Drawing.Size(93, 23);
             this.DeleteCountryBN.TabIndex = 6;
@@ -104,7 +106,7 @@
             // 
             // InsertCountryBN
             // 
-            this.InsertCountryBN.Location = new System.Drawing.Point(231, 294);
+            this.InsertCountryBN.Location = new System.Drawing.Point(330, 191);
             this.InsertCountryBN.Name = "InsertCountryBN";
             this.InsertCountryBN.Size = new System.Drawing.Size(93, 23);
             this.InsertCountryBN.TabIndex = 7;
@@ -114,7 +116,7 @@
             // 
             // BackBN
             // 
-            this.BackBN.Location = new System.Drawing.Point(231, 347);
+            this.BackBN.Location = new System.Drawing.Point(330, 220);
             this.BackBN.Name = "BackBN";
             this.BackBN.Size = new System.Drawing.Size(93, 23);
             this.BackBN.TabIndex = 8;
@@ -122,12 +124,22 @@
             this.BackBN.UseVisualStyleBackColor = true;
             this.BackBN.Click += new System.EventHandler(this.BackBN_Click);
             // 
+            // CountryListLB
+            // 
+            this.CountryListLB.AutoSize = true;
+            this.CountryListLB.Location = new System.Drawing.Point(20, 36);
+            this.CountryListLB.Name = "CountryListLB";
+            this.CountryListLB.Size = new System.Drawing.Size(65, 13);
+            this.CountryListLB.TabIndex = 9;
+            this.CountryListLB.Text = "Country List:";
+            // 
             // DeveloperCountryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.CountryListLB);
             this.Controls.Add(this.BackBN);
             this.Controls.Add(this.InsertCountryBN);
             this.Controls.Add(this.DeleteCountryBN);
@@ -157,5 +169,6 @@
         private System.Windows.Forms.Button DeleteCountryBN;
         private System.Windows.Forms.Button InsertCountryBN;
         private System.Windows.Forms.Button BackBN;
+        private System.Windows.Forms.Label CountryListLB;
     }
 }

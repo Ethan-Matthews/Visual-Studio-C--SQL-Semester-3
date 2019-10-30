@@ -39,29 +39,31 @@
             this.CountryCodeCB = new System.Windows.Forms.ComboBox();
             this.CountryCBLB = new System.Windows.Forms.Label();
             this.BackBN = new System.Windows.Forms.Button();
+            this.DeveloperListLB = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // DeveloperListBox
             // 
             this.DeveloperListBox.FormattingEnabled = true;
-            this.DeveloperListBox.Location = new System.Drawing.Point(22, 39);
+            this.DeveloperListBox.Location = new System.Drawing.Point(22, 51);
             this.DeveloperListBox.Name = "DeveloperListBox";
-            this.DeveloperListBox.Size = new System.Drawing.Size(192, 407);
+            this.DeveloperListBox.Size = new System.Drawing.Size(192, 381);
             this.DeveloperListBox.TabIndex = 0;
             this.DeveloperListBox.SelectedIndexChanged += new System.EventHandler(this.DeveloperListBox_SelectedIndexChanged);
             // 
             // DeveloperIDTB
             // 
-            this.DeveloperIDTB.Location = new System.Drawing.Point(237, 79);
+            this.DeveloperIDTB.Enabled = false;
+            this.DeveloperIDTB.Location = new System.Drawing.Point(237, 91);
             this.DeveloperIDTB.Name = "DeveloperIDTB";
             this.DeveloperIDTB.ReadOnly = true;
-            this.DeveloperIDTB.Size = new System.Drawing.Size(174, 20);
+            this.DeveloperIDTB.Size = new System.Drawing.Size(208, 20);
             this.DeveloperIDTB.TabIndex = 1;
             // 
             // DeveloperIDLabel
             // 
             this.DeveloperIDLabel.AutoSize = true;
-            this.DeveloperIDLabel.Location = new System.Drawing.Point(234, 63);
+            this.DeveloperIDLabel.Location = new System.Drawing.Point(234, 75);
             this.DeveloperIDLabel.Name = "DeveloperIDLabel";
             this.DeveloperIDLabel.Size = new System.Drawing.Size(73, 13);
             this.DeveloperIDLabel.TabIndex = 2;
@@ -70,7 +72,7 @@
             // DeveloperNameLB
             // 
             this.DeveloperNameLB.AutoSize = true;
-            this.DeveloperNameLB.Location = new System.Drawing.Point(234, 134);
+            this.DeveloperNameLB.Location = new System.Drawing.Point(234, 146);
             this.DeveloperNameLB.Name = "DeveloperNameLB";
             this.DeveloperNameLB.Size = new System.Drawing.Size(90, 13);
             this.DeveloperNameLB.TabIndex = 3;
@@ -78,14 +80,14 @@
             // 
             // DeveloperNameTB
             // 
-            this.DeveloperNameTB.Location = new System.Drawing.Point(237, 150);
+            this.DeveloperNameTB.Location = new System.Drawing.Point(237, 162);
             this.DeveloperNameTB.Name = "DeveloperNameTB";
-            this.DeveloperNameTB.Size = new System.Drawing.Size(174, 20);
+            this.DeveloperNameTB.Size = new System.Drawing.Size(208, 20);
             this.DeveloperNameTB.TabIndex = 4;
             // 
             // SaveBN
             // 
-            this.SaveBN.Location = new System.Drawing.Point(237, 213);
+            this.SaveBN.Location = new System.Drawing.Point(237, 225);
             this.SaveBN.Name = "SaveBN";
             this.SaveBN.Size = new System.Drawing.Size(101, 23);
             this.SaveBN.TabIndex = 5;
@@ -95,7 +97,7 @@
             // 
             // DeleteBN
             // 
-            this.DeleteBN.Location = new System.Drawing.Point(237, 269);
+            this.DeleteBN.Location = new System.Drawing.Point(237, 254);
             this.DeleteBN.Name = "DeleteBN";
             this.DeleteBN.Size = new System.Drawing.Size(101, 23);
             this.DeleteBN.TabIndex = 6;
@@ -105,7 +107,7 @@
             // 
             // InsertBN
             // 
-            this.InsertBN.Location = new System.Drawing.Point(237, 326);
+            this.InsertBN.Location = new System.Drawing.Point(344, 225);
             this.InsertBN.Name = "InsertBN";
             this.InsertBN.Size = new System.Drawing.Size(101, 23);
             this.InsertBN.TabIndex = 7;
@@ -115,16 +117,18 @@
             // 
             // CountryCodeCB
             // 
+            this.CountryCodeCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CountryCodeCB.FormattingEnabled = true;
-            this.CountryCodeCB.Location = new System.Drawing.Point(488, 78);
+            this.CountryCodeCB.Location = new System.Drawing.Point(511, 90);
             this.CountryCodeCB.Name = "CountryCodeCB";
-            this.CountryCodeCB.Size = new System.Drawing.Size(263, 21);
+            this.CountryCodeCB.Size = new System.Drawing.Size(237, 21);
             this.CountryCodeCB.TabIndex = 8;
+            this.CountryCodeCB.SelectedIndexChanged += new System.EventHandler(this.CountryCodeCB_SelectedIndexChanged);
             // 
             // CountryCBLB
             // 
             this.CountryCBLB.AutoSize = true;
-            this.CountryCBLB.Location = new System.Drawing.Point(485, 62);
+            this.CountryCBLB.Location = new System.Drawing.Point(508, 75);
             this.CountryCBLB.Name = "CountryCBLB";
             this.CountryCBLB.Size = new System.Drawing.Size(46, 13);
             this.CountryCBLB.TabIndex = 9;
@@ -132,7 +136,7 @@
             // 
             // BackBN
             // 
-            this.BackBN.Location = new System.Drawing.Point(237, 379);
+            this.BackBN.Location = new System.Drawing.Point(344, 254);
             this.BackBN.Name = "BackBN";
             this.BackBN.Size = new System.Drawing.Size(101, 23);
             this.BackBN.TabIndex = 10;
@@ -140,12 +144,22 @@
             this.BackBN.UseVisualStyleBackColor = true;
             this.BackBN.Click += new System.EventHandler(this.BackBN_Click);
             // 
+            // DeveloperListLB
+            // 
+            this.DeveloperListLB.AutoSize = true;
+            this.DeveloperListLB.Location = new System.Drawing.Point(19, 35);
+            this.DeveloperListLB.Name = "DeveloperListLB";
+            this.DeveloperListLB.Size = new System.Drawing.Size(78, 13);
+            this.DeveloperListLB.TabIndex = 11;
+            this.DeveloperListLB.Text = "Developer List:";
+            // 
             // DeveloperForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.DeveloperListLB);
             this.Controls.Add(this.BackBN);
             this.Controls.Add(this.CountryCBLB);
             this.Controls.Add(this.CountryCodeCB);
@@ -179,5 +193,6 @@
         private System.Windows.Forms.ComboBox CountryCodeCB;
         private System.Windows.Forms.Label CountryCBLB;
         private System.Windows.Forms.Button BackBN;
+        private System.Windows.Forms.Label DeveloperListLB;
     }
 }

@@ -47,20 +47,21 @@
             this.GameIDLB = new System.Windows.Forms.Label();
             this.BackBN = new System.Windows.Forms.Button();
             this.NumAchievTBLB = new System.Windows.Forms.Label();
+            this.GameListLB = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // VideoGameListBox
             // 
             this.VideoGameListBox.FormattingEnabled = true;
-            this.VideoGameListBox.Location = new System.Drawing.Point(19, 44);
+            this.VideoGameListBox.Location = new System.Drawing.Point(19, 54);
             this.VideoGameListBox.Name = "VideoGameListBox";
-            this.VideoGameListBox.Size = new System.Drawing.Size(186, 394);
+            this.VideoGameListBox.Size = new System.Drawing.Size(186, 381);
             this.VideoGameListBox.TabIndex = 0;
             this.VideoGameListBox.SelectedIndexChanged += new System.EventHandler(this.VideoGameListBox_SelectedIndexChanged);
             // 
             // TitleTB
             // 
-            this.TitleTB.Location = new System.Drawing.Point(230, 128);
+            this.TitleTB.Location = new System.Drawing.Point(230, 138);
             this.TitleTB.Name = "TitleTB";
             this.TitleTB.Size = new System.Drawing.Size(204, 20);
             this.TitleTB.TabIndex = 1;
@@ -68,7 +69,7 @@
             // TitleLB
             // 
             this.TitleLB.AutoSize = true;
-            this.TitleLB.Location = new System.Drawing.Point(227, 113);
+            this.TitleLB.Location = new System.Drawing.Point(227, 123);
             this.TitleLB.Name = "TitleLB";
             this.TitleLB.Size = new System.Drawing.Size(30, 13);
             this.TitleLB.TabIndex = 2;
@@ -76,7 +77,7 @@
             // 
             // ReleaseDateTB
             // 
-            this.ReleaseDateTB.Location = new System.Drawing.Point(230, 196);
+            this.ReleaseDateTB.Location = new System.Drawing.Point(230, 206);
             this.ReleaseDateTB.Name = "ReleaseDateTB";
             this.ReleaseDateTB.Size = new System.Drawing.Size(204, 20);
             this.ReleaseDateTB.TabIndex = 3;
@@ -84,7 +85,7 @@
             // ReleaseDTB
             // 
             this.ReleaseDTB.AutoSize = true;
-            this.ReleaseDTB.Location = new System.Drawing.Point(227, 180);
+            this.ReleaseDTB.Location = new System.Drawing.Point(227, 190);
             this.ReleaseDTB.Name = "ReleaseDTB";
             this.ReleaseDTB.Size = new System.Drawing.Size(252, 13);
             this.ReleaseDTB.TabIndex = 4;
@@ -92,7 +93,7 @@
             // 
             // HoursPlayedTB
             // 
-            this.HoursPlayedTB.Location = new System.Drawing.Point(230, 260);
+            this.HoursPlayedTB.Location = new System.Drawing.Point(230, 270);
             this.HoursPlayedTB.Name = "HoursPlayedTB";
             this.HoursPlayedTB.Size = new System.Drawing.Size(204, 20);
             this.HoursPlayedTB.TabIndex = 5;
@@ -100,7 +101,7 @@
             // HoursPlayerLB
             // 
             this.HoursPlayerLB.AutoSize = true;
-            this.HoursPlayerLB.Location = new System.Drawing.Point(227, 244);
+            this.HoursPlayerLB.Location = new System.Drawing.Point(227, 254);
             this.HoursPlayerLB.Name = "HoursPlayerLB";
             this.HoursPlayerLB.Size = new System.Drawing.Size(73, 13);
             this.HoursPlayerLB.TabIndex = 6;
@@ -108,14 +109,14 @@
             // 
             // NumAchievTB
             // 
-            this.NumAchievTB.Location = new System.Drawing.Point(230, 322);
+            this.NumAchievTB.Location = new System.Drawing.Point(230, 332);
             this.NumAchievTB.Name = "NumAchievTB";
             this.NumAchievTB.Size = new System.Drawing.Size(204, 20);
             this.NumAchievTB.TabIndex = 7;
             // 
             // SaveBN
             // 
-            this.SaveBN.Location = new System.Drawing.Point(230, 374);
+            this.SaveBN.Location = new System.Drawing.Point(230, 384);
             this.SaveBN.Name = "SaveBN";
             this.SaveBN.Size = new System.Drawing.Size(99, 23);
             this.SaveBN.TabIndex = 9;
@@ -125,7 +126,7 @@
             // 
             // DeleteBN
             // 
-            this.DeleteBN.Location = new System.Drawing.Point(230, 403);
+            this.DeleteBN.Location = new System.Drawing.Point(230, 413);
             this.DeleteBN.Name = "DeleteBN";
             this.DeleteBN.Size = new System.Drawing.Size(99, 23);
             this.DeleteBN.TabIndex = 10;
@@ -135,7 +136,7 @@
             // 
             // InsertBN
             // 
-            this.InsertBN.Location = new System.Drawing.Point(335, 374);
+            this.InsertBN.Location = new System.Drawing.Point(335, 384);
             this.InsertBN.Name = "InsertBN";
             this.InsertBN.Size = new System.Drawing.Size(99, 23);
             this.InsertBN.TabIndex = 11;
@@ -145,16 +146,18 @@
             // 
             // DeveloperCB
             // 
+            this.DeveloperCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DeveloperCB.FormattingEnabled = true;
-            this.DeveloperCB.Location = new System.Drawing.Point(504, 64);
+            this.DeveloperCB.Location = new System.Drawing.Point(504, 74);
             this.DeveloperCB.Name = "DeveloperCB";
             this.DeveloperCB.Size = new System.Drawing.Size(221, 21);
+            this.DeveloperCB.Sorted = true;
             this.DeveloperCB.TabIndex = 12;
             // 
             // DeveloperCBLB
             // 
             this.DeveloperCBLB.AutoSize = true;
-            this.DeveloperCBLB.Location = new System.Drawing.Point(501, 48);
+            this.DeveloperCBLB.Location = new System.Drawing.Point(501, 58);
             this.DeveloperCBLB.Name = "DeveloperCBLB";
             this.DeveloperCBLB.Size = new System.Drawing.Size(59, 13);
             this.DeveloperCBLB.TabIndex = 13;
@@ -162,8 +165,9 @@
             // 
             // GenreCB
             // 
+            this.GenreCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GenreCB.FormattingEnabled = true;
-            this.GenreCB.Location = new System.Drawing.Point(504, 127);
+            this.GenreCB.Location = new System.Drawing.Point(504, 137);
             this.GenreCB.Name = "GenreCB";
             this.GenreCB.Size = new System.Drawing.Size(221, 21);
             this.GenreCB.TabIndex = 14;
@@ -171,7 +175,7 @@
             // GenreCBLB
             // 
             this.GenreCBLB.AutoSize = true;
-            this.GenreCBLB.Location = new System.Drawing.Point(501, 113);
+            this.GenreCBLB.Location = new System.Drawing.Point(501, 123);
             this.GenreCBLB.Name = "GenreCBLB";
             this.GenreCBLB.Size = new System.Drawing.Size(39, 13);
             this.GenreCBLB.TabIndex = 15;
@@ -179,7 +183,8 @@
             // 
             // GameIDTB
             // 
-            this.GameIDTB.Location = new System.Drawing.Point(230, 64);
+            this.GameIDTB.Enabled = false;
+            this.GameIDTB.Location = new System.Drawing.Point(230, 74);
             this.GameIDTB.Name = "GameIDTB";
             this.GameIDTB.ReadOnly = true;
             this.GameIDTB.Size = new System.Drawing.Size(204, 20);
@@ -188,7 +193,7 @@
             // GameIDLB
             // 
             this.GameIDLB.AutoSize = true;
-            this.GameIDLB.Location = new System.Drawing.Point(227, 48);
+            this.GameIDLB.Location = new System.Drawing.Point(227, 58);
             this.GameIDLB.Name = "GameIDLB";
             this.GameIDLB.Size = new System.Drawing.Size(52, 13);
             this.GameIDLB.TabIndex = 17;
@@ -196,7 +201,7 @@
             // 
             // BackBN
             // 
-            this.BackBN.Location = new System.Drawing.Point(335, 403);
+            this.BackBN.Location = new System.Drawing.Point(335, 413);
             this.BackBN.Name = "BackBN";
             this.BackBN.Size = new System.Drawing.Size(99, 23);
             this.BackBN.TabIndex = 18;
@@ -207,11 +212,20 @@
             // NumAchievTBLB
             // 
             this.NumAchievTBLB.AutoSize = true;
-            this.NumAchievTBLB.Location = new System.Drawing.Point(227, 306);
+            this.NumAchievTBLB.Location = new System.Drawing.Point(227, 316);
             this.NumAchievTBLB.Name = "NumAchievTBLB";
             this.NumAchievTBLB.Size = new System.Drawing.Size(129, 13);
             this.NumAchievTBLB.TabIndex = 19;
             this.NumAchievTBLB.Text = "Number of Achievements:";
+            // 
+            // GameListLB
+            // 
+            this.GameListLB.AutoSize = true;
+            this.GameListLB.Location = new System.Drawing.Point(16, 38);
+            this.GameListLB.Name = "GameListLB";
+            this.GameListLB.Size = new System.Drawing.Size(57, 13);
+            this.GameListLB.TabIndex = 20;
+            this.GameListLB.Text = "Game List:";
             // 
             // VideoGameForm
             // 
@@ -219,6 +233,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.GameListLB);
             this.Controls.Add(this.NumAchievTBLB);
             this.Controls.Add(this.BackBN);
             this.Controls.Add(this.GameIDLB);
@@ -268,5 +283,6 @@
         private System.Windows.Forms.Label GameIDLB;
         private System.Windows.Forms.Button BackBN;
         private System.Windows.Forms.Label NumAchievTBLB;
+        private System.Windows.Forms.Label GameListLB;
     }
 }

@@ -114,5 +114,10 @@ namespace VideoGameUI
         {
             this.Close();
         }
+
+        private void CountryCodeCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

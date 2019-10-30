@@ -85,6 +85,8 @@ namespace VideoGameUI
                     MessageBox.Show("Warning! Country Not Updated.");
                 }
             }
+            CountryCodeTB.Enabled = false;
+            CountryCodeTB.ReadOnly = true;
         }
 
         private void DeleteCountryBN_Click(object sender, EventArgs e)
@@ -108,10 +110,11 @@ namespace VideoGameUI
 
         private void InsertCountryBN_Click(object sender, EventArgs e)
         {
+            CountryCodeTB.Enabled = true;
+            CountryCodeTB.ReadOnly = false;
             CountryCodeTB.Text = string.Empty;
             CountryNameTB.Text = string.Empty;
             DeveloperCountryListBox.SelectedIndex = -1;
-            CountryCodeTB.ReadOnly = false;
             CountryCodeTB.Focus();
         }
 
