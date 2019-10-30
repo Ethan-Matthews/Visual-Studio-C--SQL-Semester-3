@@ -25,11 +25,17 @@ namespace VideoGameUI
             //genreForm.Dock = DockStyle.Fill;
             //genreForm.Show();
 
-            Form devCountryForm = new DeveloperCountryForm();
-            devCountryForm.MdiParent = this;
-            devCountryForm.FormBorderStyle = FormBorderStyle.None;
-            devCountryForm.Dock = DockStyle.Fill;
-            devCountryForm.Show();
+            //Form devCountryForm = new DeveloperCountryForm();
+            //devCountryForm.MdiParent = this;
+            //devCountryForm.FormBorderStyle = FormBorderStyle.None;
+            //devCountryForm.Dock = DockStyle.Fill;
+            //devCountryForm.Show();
+
+            Form devForm = new DeveloperForm();
+            devForm.MdiParent = this;
+            devForm.FormBorderStyle = FormBorderStyle.None;
+            devForm.Dock = DockStyle.Fill;
+            devForm.Show();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

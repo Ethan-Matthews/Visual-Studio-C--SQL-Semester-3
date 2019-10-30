@@ -45,6 +45,7 @@ namespace VideoGameUI
 
         private void SaveCountryBN_Click(object sender, EventArgs e)
         {
+            CountryCodeTB.ReadOnly = true;
             bool isInList = false;
             List<DeveloperCountry> devCountryList = DeveloperCountryManager.GetDeveloperCountryList();
             foreach (DeveloperCountry country in devCountryList)
