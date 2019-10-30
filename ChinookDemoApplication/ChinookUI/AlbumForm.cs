@@ -140,5 +140,10 @@ namespace ChinookUI
             //select the first item in the artist listbox
             AlbumArtistComboBox.SelectedIndex = 0;
         }
+
+        private void AlbumArtistComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

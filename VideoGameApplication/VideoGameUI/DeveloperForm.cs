@@ -23,6 +23,11 @@ namespace VideoGameUI
         {
             UpdateDeveloperListView();
             DeveloperListBox.DisplayMember = "DeveloperName";
+
+            List<DeveloperCountry> country = DeveloperCountryManager.GetDeveloperCountryList();
+            CountryCodeCB.DataSource = country;
+            CountryCodeCB.DisplayMember = "CountryName";
+            CountryCodeCB.ValueMember = "CountryCode";
         }
 
         private void UpdateDeveloperListView()
@@ -39,7 +44,7 @@ namespace VideoGameUI
 
                 DeveloperIDTB.Text = dev.DeveloperID.ToString();
                 DeveloperNameTB.Text = dev.DeveloperName;
-
+                CountryCodeCB.SelectedValue = dev.CountryCode;
             }
         }
 
@@ -49,6 +54,7 @@ namespace VideoGameUI
             {
                 Developer newDev = new Developer();
                 newDev.DeveloperName = DeveloperNameTB.Text;
+                newDev.CountryCode = ((DeveloperCountry)CountryCodeCB.SelectedItem).CountryCode;
                 DeveloperManager.InsertDeveloper(newDev);
 
                 MessageBox.Show("Developer Inserted.");
@@ -99,8 +105,14 @@ namespace VideoGameUI
         {
             DeveloperIDTB.Text = string.Empty;
             DeveloperNameTB.Text = string.Empty;
+            CountryCodeCB.SelectedIndex = -1;
             DeveloperListBox.SelectedIndex = -1;
             DeveloperNameTB.Focus();
+        }
+
+        private void BackBN_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

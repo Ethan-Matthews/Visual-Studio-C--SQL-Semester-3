@@ -73,6 +73,7 @@
             this.AlbumArtistComboBox.Name = "AlbumArtistComboBox";
             this.AlbumArtistComboBox.Size = new System.Drawing.Size(391, 21);
             this.AlbumArtistComboBox.TabIndex = 3;
+            this.AlbumArtistComboBox.SelectedIndexChanged += new System.EventHandler(this.AlbumArtistComboBox_SelectedIndexChanged);
             // 
             // label1
             // 

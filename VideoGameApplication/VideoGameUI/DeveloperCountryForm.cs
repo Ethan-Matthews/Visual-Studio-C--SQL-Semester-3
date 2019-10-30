@@ -120,5 +120,10 @@ namespace VideoGameUI
             List<DeveloperCountry> devCountryList = DeveloperCountryManager.GetDeveloperCountryList();
             DeveloperCountryListBox.DataSource = devCountryList;
         }
+
+        private void BackBN_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

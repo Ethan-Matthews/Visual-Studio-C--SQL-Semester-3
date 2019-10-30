@@ -36,20 +36,21 @@
             this.SaveBN = new System.Windows.Forms.Button();
             this.deleteBN = new System.Windows.Forms.Button();
             this.InsertGenreBN = new System.Windows.Forms.Button();
+            this.BackBN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GenreListBox
             // 
             this.GenreListBox.FormattingEnabled = true;
-            this.GenreListBox.Location = new System.Drawing.Point(12, 12);
+            this.GenreListBox.Location = new System.Drawing.Point(22, 39);
             this.GenreListBox.Name = "GenreListBox";
-            this.GenreListBox.Size = new System.Drawing.Size(175, 420);
+            this.GenreListBox.Size = new System.Drawing.Size(175, 381);
             this.GenreListBox.TabIndex = 0;
             this.GenreListBox.SelectedIndexChanged += new System.EventHandler(this.GenreListBox_SelectedIndexChanged);
             // 
             // GenreNameTB
             // 
-            this.GenreNameTB.Location = new System.Drawing.Point(221, 94);
+            this.GenreNameTB.Location = new System.Drawing.Point(231, 121);
             this.GenreNameTB.Name = "GenreNameTB";
             this.GenreNameTB.Size = new System.Drawing.Size(204, 20);
             this.GenreNameTB.TabIndex = 1;
@@ -57,7 +58,7 @@
             // GenreNameLB
             // 
             this.GenreNameLB.AutoSize = true;
-            this.GenreNameLB.Location = new System.Drawing.Point(218, 78);
+            this.GenreNameLB.Location = new System.Drawing.Point(228, 105);
             this.GenreNameLB.Name = "GenreNameLB";
             this.GenreNameLB.Size = new System.Drawing.Size(70, 13);
             this.GenreNameLB.TabIndex = 2;
@@ -65,7 +66,7 @@
             // 
             // GenreIDTB
             // 
-            this.GenreIDTB.Location = new System.Drawing.Point(221, 39);
+            this.GenreIDTB.Location = new System.Drawing.Point(231, 66);
             this.GenreIDTB.Name = "GenreIDTB";
             this.GenreIDTB.ReadOnly = true;
             this.GenreIDTB.Size = new System.Drawing.Size(204, 20);
@@ -74,7 +75,7 @@
             // GenreIDLB
             // 
             this.GenreIDLB.AutoSize = true;
-            this.GenreIDLB.Location = new System.Drawing.Point(218, 23);
+            this.GenreIDLB.Location = new System.Drawing.Point(228, 50);
             this.GenreIDLB.Name = "GenreIDLB";
             this.GenreIDLB.Size = new System.Drawing.Size(53, 13);
             this.GenreIDLB.TabIndex = 4;
@@ -82,7 +83,7 @@
             // 
             // SaveBN
             // 
-            this.SaveBN.Location = new System.Drawing.Point(221, 142);
+            this.SaveBN.Location = new System.Drawing.Point(231, 169);
             this.SaveBN.Name = "SaveBN";
             this.SaveBN.Size = new System.Drawing.Size(103, 23);
             this.SaveBN.TabIndex = 5;
@@ -92,7 +93,7 @@
             // 
             // deleteBN
             // 
-            this.deleteBN.Location = new System.Drawing.Point(221, 191);
+            this.deleteBN.Location = new System.Drawing.Point(231, 218);
             this.deleteBN.Name = "deleteBN";
             this.deleteBN.Size = new System.Drawing.Size(103, 23);
             this.deleteBN.TabIndex = 6;
@@ -102,7 +103,7 @@
             // 
             // InsertGenreBN
             // 
-            this.InsertGenreBN.Location = new System.Drawing.Point(221, 237);
+            this.InsertGenreBN.Location = new System.Drawing.Point(231, 264);
             this.InsertGenreBN.Name = "InsertGenreBN";
             this.InsertGenreBN.Size = new System.Drawing.Size(103, 23);
             this.InsertGenreBN.TabIndex = 7;
@@ -110,12 +111,23 @@
             this.InsertGenreBN.UseVisualStyleBackColor = true;
             this.InsertGenreBN.Click += new System.EventHandler(this.InsertGenreBN_Click);
             // 
+            // BackBN
+            // 
+            this.BackBN.Location = new System.Drawing.Point(231, 311);
+            this.BackBN.Name = "BackBN";
+            this.BackBN.Size = new System.Drawing.Size(103, 23);
+            this.BackBN.TabIndex = 8;
+            this.BackBN.Text = "Back";
+            this.BackBN.UseVisualStyleBackColor = true;
+            this.BackBN.Click += new System.EventHandler(this.BackBN_Click);
+            // 
             // GenreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.BackBN);
             this.Controls.Add(this.InsertGenreBN);
             this.Controls.Add(this.deleteBN);
             this.Controls.Add(this.SaveBN);
@@ -142,5 +154,6 @@
         private System.Windows.Forms.Button SaveBN;
         private System.Windows.Forms.Button deleteBN;
         private System.Windows.Forms.Button InsertGenreBN;
+        private System.Windows.Forms.Button BackBN;
     }
 }

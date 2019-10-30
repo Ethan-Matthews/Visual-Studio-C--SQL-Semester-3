@@ -106,5 +106,10 @@ namespace VideoGameUI
             List<Genre> genreList = GenreManager.GetGenreList();
             GenreListBox.DataSource = genreList;
         }
+
+        private void BackBN_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
