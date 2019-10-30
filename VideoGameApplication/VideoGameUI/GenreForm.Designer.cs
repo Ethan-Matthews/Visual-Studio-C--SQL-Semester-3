@@ -74,7 +74,7 @@
             // GenreIDLB
             // 
             this.GenreIDLB.AutoSize = true;
-            this.GenreIDLB.Location = new System.Drawing.Point(221, 20);
+            this.GenreIDLB.Location = new System.Drawing.Point(218, 23);
             this.GenreIDLB.Name = "GenreIDLB";
             this.GenreIDLB.Size = new System.Drawing.Size(53, 13);
             this.GenreIDLB.TabIndex = 4;
