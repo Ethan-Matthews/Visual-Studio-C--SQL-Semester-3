@@ -35,7 +35,7 @@ namespace VideoGameDAL.Models
 
         private Developer _developer_;  // Single from Developer.
 
-        public Developer Deveoper
+        public Developer Developer
         {
             get
             {
