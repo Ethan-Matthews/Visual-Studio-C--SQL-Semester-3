@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHarness", "TestHarness\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameUI", "VideoGameUI\VideoGameUI.csproj", "{9A7D63A9-D92C-433E-8CD1-0A6D3148FF96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{798E3A37-76AE-418A-A53A-3F1A1971529A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{B36DC07B-C64E-4B15-AB47-41FCC3DA592D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,10 @@ Global
 		{9A7D63A9-D92C-433E-8CD1-0A6D3148FF96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A7D63A9-D92C-433E-8CD1-0A6D3148FF96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A7D63A9-D92C-433E-8CD1-0A6D3148FF96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{798E3A37-76AE-418A-A53A-3F1A1971529A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{798E3A37-76AE-418A-A53A-3F1A1971529A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{798E3A37-76AE-418A-A53A-3F1A1971529A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{798E3A37-76AE-418A-A53A-3F1A1971529A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B36DC07B-C64E-4B15-AB47-41FCC3DA592D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B36DC07B-C64E-4B15-AB47-41FCC3DA592D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B36DC07B-C64E-4B15-AB47-41FCC3DA592D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B36DC07B-C64E-4B15-AB47-41FCC3DA592D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
